@@ -91,7 +91,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="section-frame relative overflow-hidden bg-[color:var(--secondary)] p-6 flex flex-col justify-between">
+              <div className="section-frame relative overflow-hidden bg-[color:var(--secondary)] p-6 min-h-[13rem] flex flex-col justify-between">
                 <div className="absolute right-4 top-4 h-16 w-16 rounded-full bg-black/5" />
                 <div className="space-y-4">
                   <div className="flex -space-x-3">
@@ -105,7 +105,7 @@ export default function HomePage() {
                     콘텐츠 피드
                   </h3>
                 </div>
-                <div className="mt-8 flex items-center justify-between text-sm font-semibold text-[color:var(--foreground)]">
+                <div className="mt-auto pt-8 flex items-center justify-between text-sm font-semibold text-[color:var(--foreground)]">
                   <span>콘텐츠 큐레이션 보기</span>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
                     →
@@ -113,11 +113,11 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="section-frame relative overflow-hidden bg-[color:var(--accent)] p-6 flex flex-col justify-between">
+              <div className="section-frame relative overflow-hidden bg-[color:var(--accent)] p-6 min-h-[13rem] flex flex-col justify-between">
                 <h3 className="display-font text-2xl font-semibold text-[#312c85]">
                   카테고리별 필터링
                 </h3>
-                <div className="mt-10 grid h-16 grid-cols-5 items-end gap-2">
+                <div className="mt-auto pt-8 grid h-16 grid-cols-5 items-end gap-2">
                   <span className="rounded-t-md bg-[#8c9cff]/45" style={{ height: "40%" }} />
                   <span className="rounded-t-md bg-[#8c9cff]/45" style={{ height: "60%" }} />
                   <span className="rounded-t-md bg-[#8c9cff]/45" style={{ height: "30%" }} />
@@ -158,7 +158,7 @@ export default function HomePage() {
             title="콘텐츠 피드"
             align="center"
           />
-          <div className="grid gap-4 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {latestContent.map((item) => (
               <Link
                 key={item.slug}
