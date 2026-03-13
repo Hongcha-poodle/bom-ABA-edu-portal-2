@@ -27,9 +27,6 @@ export function Header() {
             <p className="display-font text-lg font-semibold text-[color:var(--foreground)]">
               ABA 에듀 포털
             </p>
-            <p className="text-xs text-[color:var(--muted-foreground)]">
-              아이와 부모가 함께 성장하는 교육 허브
-            </p>
           </div>
         </Link>
 

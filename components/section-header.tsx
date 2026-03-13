@@ -1,15 +1,15 @@
 type SectionHeaderProps = {
-  eyebrow: string;
   title: string;
-  description: string;
+  eyebrow?: string;
+  description?: string;
   align?: "left" | "center";
   tone?: "default" | "contrast";
   compact?: boolean;
 };
 
 export function SectionHeader({
-  eyebrow,
   title,
+  eyebrow,
   description,
   align = "left",
   tone = "default",
@@ -23,17 +23,21 @@ export function SectionHeader({
 
   return (
     <div className={`max-w-3xl ${compact ? "space-y-2" : "space-y-3"} ${alignment}`}>
-      <p className={`text-sm font-semibold uppercase tracking-[0.2em] ${eyebrowTone}`}>
-        {eyebrow}
-      </p>
+      {eyebrow && (
+        <p className={`text-sm font-semibold uppercase tracking-[0.2em] ${eyebrowTone}`}>
+          {eyebrow}
+        </p>
+      )}
       <h2
         className={`display-font balance-text font-semibold ${compact ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"} ${titleTone}`}
       >
         {title}
       </h2>
-      <p className={`text-base leading-7 ${descriptionTone}`}>
-        {description}
-      </p>
+      {description && (
+        <p className={`text-base leading-7 ${descriptionTone}`}>
+          {description}
+        </p>
+      )}
     </div>
   );
 }

@@ -55,17 +55,12 @@ export default function HomePage() {
       <Container className="relative z-10 space-y-14">
         <section className="space-y-8 rounded-[var(--radius-panel)] bg-transparent py-4">
           <div className="mx-auto max-w-4xl space-y-5 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--primary)]">
-              ABA Edu Portal
-            </p>
             <h1 className="display-font balance-text text-4xl font-semibold leading-tight text-[color:var(--foreground)] sm:text-5xl lg:text-7xl">
-              우리 아이의 성장을 위한
-              <span className="block text-[color:var(--primary)]">스마트한 교육 파트너</span>
+              발달지연 아동 부모를 위한
+              <span className="block text-[color:var(--primary)]">ABA 교육 콘텐츠 포털</span>
             </h1>
             <p className="mx-auto max-w-3xl text-base leading-8 text-[color:var(--muted-foreground)] sm:text-xl">
-              발달이 느린 아이를 위한 맞춤형 교육 콘텐츠와 실습형 앱을 한 흐름으로
-              연결했습니다. 처음 시작하는 부모도 무엇을 읽고 어떻게 이어갈지 바로
-              이해할 수 있도록 정리했습니다.
+              매거진, 가이드, 교육 앱을 한곳에서.
             </p>
           </div>
 
@@ -88,22 +83,15 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="relative z-10 max-w-sm space-y-3 text-white">
-                  <span className="inline-flex rounded-full border border-white/25 bg-white/15 px-4 py-1 text-sm font-semibold">
-                    AI 맞춤형 학습
-                  </span>
                   <h2 className="display-font text-3xl font-semibold leading-tight sm:text-4xl">
-                    아이의 속도에 맞춘 즐거운 놀이 학습
+                    교육 앱
                   </h2>
-                  <p className="text-sm leading-7 text-white/80 sm:text-base">
-                    읽기와 실습을 분리하지 않고, 집에서 바로 따라 해볼 수 있는 흐름으로
-                    정리했습니다.
-                  </p>
                 </div>
               </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="section-frame relative overflow-hidden bg-[color:var(--secondary)] p-6">
+              <div className="section-frame relative overflow-hidden bg-[color:var(--secondary)] p-6 flex flex-col justify-between">
                 <div className="absolute right-4 top-4 h-16 w-16 rounded-full bg-black/5" />
                 <div className="space-y-4">
                   <div className="flex -space-x-3">
@@ -114,10 +102,10 @@ export default function HomePage() {
                     </span>
                   </div>
                   <h3 className="display-font text-2xl font-semibold text-[color:var(--foreground)]">
-                    검증된 전문가 그룹
+                    콘텐츠 피드
                   </h3>
                 </div>
-                <div className="mt-10 flex items-center justify-between text-sm font-semibold text-[color:var(--foreground)]">
+                <div className="mt-8 flex items-center justify-between text-sm font-semibold text-[color:var(--foreground)]">
                   <span>콘텐츠 큐레이션 보기</span>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white">
                     →
@@ -125,12 +113,9 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="section-frame relative overflow-hidden bg-[color:var(--accent)] p-6">
-                <span className="inline-flex rounded-full bg-white/60 px-3 py-1 text-xs font-semibold text-[#51459b]">
-                  성장 리포트
-                </span>
-                <h3 className="display-font mt-4 text-2xl font-semibold text-[#312c85]">
-                  매주 도착하는 발달 리포트
+              <div className="section-frame relative overflow-hidden bg-[color:var(--accent)] p-6 flex flex-col justify-between">
+                <h3 className="display-font text-2xl font-semibold text-[#312c85]">
+                  카테고리별 필터링
                 </h3>
                 <div className="mt-10 grid h-16 grid-cols-5 items-end gap-2">
                   <span className="rounded-t-md bg-[#8c9cff]/45" style={{ height: "40%" }} />
@@ -170,9 +155,7 @@ export default function HomePage() {
 
         <section className="space-y-8 rounded-[var(--radius-panel)] bg-[#faf7f3] px-6 py-10 sm:px-8">
           <SectionHeader
-            eyebrow="오늘 읽기 좋은 교육 콘텐츠"
-            title="지금 필요한 주제에서 바로 시작하세요"
-            description="전문가가 전하는 육아 팁과 실천 가이드를 짧은 카드로 먼저 만나보고, 관심 있는 주제는 상세 페이지에서 이어서 살펴보세요."
+            title="콘텐츠 피드"
             align="center"
           />
           <div className="grid gap-4 lg:grid-cols-3">
@@ -206,9 +189,7 @@ export default function HomePage() {
 
         <section className="space-y-8">
           <SectionHeader
-            eyebrow="Guide & Tools"
-            title="질문이 정답을 만나는 곳"
-            description="읽기만으로 끝나지 않도록, 부모가 자주 찾는 가이드와 추천 경로를 빠르게 꺼내볼 수 있게 정리했습니다."
+            title="카테고리별 가이드"
             align="center"
           />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -237,17 +218,10 @@ export default function HomePage() {
 
         <section className="section-frame overflow-hidden">
           <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="p-8 sm:p-10">
-              <span className="inline-flex rounded-[18px] bg-[color:var(--accent)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#5d4b9d]">
-                App Spotlight
-              </span>
-              <h2 className="display-font mt-6 text-3xl font-semibold text-[color:var(--foreground)] sm:text-4xl">
-                새로운 경험, {featuredApp.name}
+            <div className="p-8 sm:p-10 flex flex-col justify-center">
+              <h2 className="display-font text-3xl font-semibold text-[color:var(--foreground)] sm:text-4xl">
+                교육 앱: {featuredApp.name}
               </h2>
-              <p className="mt-4 max-w-xl text-base leading-8 text-[color:var(--muted-foreground)]">
-                {featuredApp.shortDescription} 짧은 세션으로 시작해 아이의 속도에 맞게
-                반복할 수 있도록 설계했습니다.
-              </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <CTAButton href={`/apps/${featuredApp.slug}` as Route}>앱 상세 보기</CTAButton>
                 <CTAButton href="/apps" variant="secondary">
@@ -291,9 +265,7 @@ export default function HomePage() {
 
         <section className="space-y-6 py-2 text-center">
           <SectionHeader
-            eyebrow="함께 시작하기"
-            title="우리 아이 교육, 함께 시작해요"
-            description="처음이라면 언어 콘텐츠부터, 실습이 필요하다면 교육 앱부터 시작해 보세요. 짧은 콘텐츠와 앱이 같은 흐름 안에서 이어집니다."
+            title="함께 시작하기"
             align="center"
           />
           <div className="mx-auto max-w-sm rounded-[2rem] bg-[linear-gradient(135deg,#7d5ef8_0%,#8b6cf4_100%)] p-3 shadow-[0_24px_48px_rgba(125,94,248,0.28)]">

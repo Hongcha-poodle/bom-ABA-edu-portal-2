@@ -18,10 +18,7 @@ export function Footer() {
                 ABA 에듀 포털
               </p>
             </div>
-            <p className="max-w-xs text-sm leading-6 text-[color:var(--muted-foreground)]">
-              아이와 부모가 함께 성장할 수 있도록 짧고 실용적인 콘텐츠와 교육 앱을
-              한곳에 모았습니다.
-            </p>
+
             <div className="flex gap-3 text-xs text-[color:var(--muted-foreground)]">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#eceff3]">
                 인
