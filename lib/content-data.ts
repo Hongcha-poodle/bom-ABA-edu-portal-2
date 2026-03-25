@@ -8,6 +8,19 @@ export type Category = {
   softColor: string;
 };
 
+export type VisualAsset = {
+  src?: string;
+  alt: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  badge?: string;
+  emoji?: string;
+  background: string;
+  accent: string;
+  foreground?: string;
+};
+
 type ImageSequenceBody = {
   sections: Array<{
     title: string;
@@ -46,6 +59,7 @@ export type ContentItem = {
   contentType: ContentType;
   summary: string;
   coverImage: string;
+  coverAsset: VisualAsset;
   publishedAt: string;
 } & (
   | { contentType: "image-sequence"; body: ImageSequenceBody }
@@ -60,6 +74,7 @@ export type AppItem = {
   shortDescription: string;
   features: string[];
   thumbnail: string;
+  thumbnailAsset: VisualAsset;
   launchMode: "detail" | "placeholder";
   ageRange: string;
   sessionLength: string;
@@ -104,6 +119,18 @@ export const contentItems: ContentItem[] = [
     contentType: "image-sequence",
     summary: "말로 표현이 어려운 아이가 그림 선택판을 통해 원하는 것을 요청하도록 돕는 4단계 루틴입니다.",
     coverImage: "카드뉴스: 그림 선택판, 간식 요청, 칭찬 루틴",
+    coverAsset: {
+      alt: "선택 보드와 요청 훈련 루틴을 표현한 더미 썸네일",
+      eyebrow: "Card Story",
+      title: "요청 훈련",
+      description: "선택판, 즉시 강화, 짧은 모델링",
+      badge: "언어 시작",
+      emoji: "🗣️",
+      background:
+        "linear-gradient(135deg, rgba(255,245,239,1) 0%, rgba(255,225,209,1) 55%, rgba(255,205,176,1) 100%)",
+      accent: "#ff6b2c",
+      foreground: "#7a2e0f"
+    },
     publishedAt: "2026.03.12",
     body: {
       sections: [
@@ -135,6 +162,18 @@ export const contentItems: ContentItem[] = [
     contentType: "video",
     summary: "공놀이와 블록 놀이를 활용해 차례 지키기와 기다리기를 짧게 훈련하는 영상형 가이드입니다.",
     coverImage: "영상 가이드: 차례 지키기, 기다리기, 간단한 칭찬 문장",
+    coverAsset: {
+      alt: "차례 지키기 놀이를 표현한 더미 썸네일",
+      eyebrow: "Video Guide",
+      title: "차례 놀이",
+      description: "기다리기, 번갈아 하기, 짧은 칭찬",
+      badge: "사회성",
+      emoji: "🤝",
+      background:
+        "linear-gradient(135deg, rgba(235,255,248,1) 0%, rgba(207,250,232,1) 52%, rgba(164,243,214,1) 100%)",
+      accent: "#0f9f6e",
+      foreground: "#065f46"
+    },
     publishedAt: "2026.03.10",
     body: {
       videoTitle: "차례 지키기 5분 루틴",
@@ -155,6 +194,18 @@ export const contentItems: ContentItem[] = [
     contentType: "rich-text",
     summary: "양치를 싫어하는 아이를 위해 과제를 작은 단계로 쪼개고 시각 단서를 붙이는 방법을 소개합니다.",
     coverImage: "아티클: 시각 스케줄, 단계 쪼개기, 성공 경험 쌓기",
+    coverAsset: {
+      alt: "양치 루틴 단계를 보여주는 더미 썸네일",
+      eyebrow: "Article",
+      title: "양치 루틴",
+      description: "단계 쪼개기, 시각 단서, 성공 경험",
+      badge: "일상생활",
+      emoji: "🪥",
+      background:
+        "linear-gradient(135deg, rgba(255,251,214,1) 0%, rgba(254,240,138,1) 48%, rgba(253,224,71,1) 100%)",
+      accent: "#c59b06",
+      foreground: "#713f12"
+    },
     publishedAt: "2026.03.08",
     body: {
       intro:
@@ -185,6 +236,18 @@ export const contentItems: ContentItem[] = [
     contentType: "rich-text",
     summary: "울음, 떼쓰기, 던지기 행동을 막는 대신 무엇을 하게 할지 정하는 대체 행동 설계 가이드입니다.",
     coverImage: "인포그래픽: 문제 행동 관찰, 기능 추정, 대체 행동 설계",
+    coverAsset: {
+      alt: "대체 행동 설계 흐름을 표현한 더미 썸네일",
+      eyebrow: "Infographic",
+      title: "대체 행동",
+      description: "기능 관찰, 반응 설계, 일관된 강화",
+      badge: "행동 관리",
+      emoji: "🪄",
+      background:
+        "linear-gradient(135deg, rgba(236,248,255,1) 0%, rgba(186,230,253,1) 52%, rgba(125,211,252,1) 100%)",
+      accent: "#0ea5e9",
+      foreground: "#0c4a6e"
+    },
     publishedAt: "2026.03.06",
     body: {
       intro:
@@ -215,6 +278,18 @@ export const contentItems: ContentItem[] = [
     contentType: "video",
     summary: "에코익 연습을 놀이 중간에 짧게 넣어 자연스럽게 말 모방 빈도를 늘리는 방법입니다.",
     coverImage: "영상: 소리 모방, 즉시 강화, 짧은 반복",
+    coverAsset: {
+      alt: "따라 말하기 놀이를 표현한 더미 썸네일",
+      eyebrow: "Play Loop",
+      title: "소리 모방",
+      description: "한 음절, 즉시 강화, 놀이 속 반복",
+      badge: "언어 확장",
+      emoji: "🎈",
+      background:
+        "linear-gradient(135deg, rgba(243,232,255,1) 0%, rgba(221,214,254,1) 52%, rgba(196,181,253,1) 100%)",
+      accent: "#7c3aed",
+      foreground: "#4c1d95"
+    },
     publishedAt: "2026.03.04",
     body: {
       videoTitle: "놀이 속 따라 말하기 루틴",
@@ -243,6 +318,18 @@ export const appItems: AppItem[] = [
       "보호자와 함께 연습하기 좋은 단계별 모드"
     ],
     thumbnail: "⌨️",
+    thumbnailAsset: {
+      alt: "한글 키보드 학습 앱 더미 썸네일",
+      eyebrow: "Live App",
+      title: "한글 입력",
+      description: "큰 키보드, 요청 문장, 즉시 음성 피드백",
+      badge: "실행 가능",
+      emoji: "⌨️",
+      background:
+        "linear-gradient(135deg, rgba(242,245,255,1) 0%, rgba(221,229,255,1) 52%, rgba(191,219,254,1) 100%)",
+      accent: "#315efb",
+      foreground: "#1f3a8a"
+    },
     launchMode: "detail",
     ageRange: "4세 이상",
     sessionLength: "5-10분"
@@ -259,6 +346,18 @@ export const appItems: AppItem[] = [
       "짧은 세션으로 집중력 부담 최소화"
     ],
     thumbnail: "🍎",
+    thumbnailAsset: {
+      alt: "음식 분류 게임 앱 더미 썸네일",
+      eyebrow: "Live App",
+      title: "음식 분류",
+      description: "드래그 앤 드롭, 범주화, 짧은 세션",
+      badge: "추천 앱",
+      emoji: "🍎",
+      background:
+        "linear-gradient(135deg, rgba(255,246,233,1) 0%, rgba(254,215,170,1) 52%, rgba(253,186,116,1) 100%)",
+      accent: "#ea580c",
+      foreground: "#7c2d12"
+    },
     launchMode: "detail",
     ageRange: "3-7세",
     sessionLength: "3-7분"
@@ -275,6 +374,18 @@ export const appItems: AppItem[] = [
       "단계별 난이도 조절"
     ],
     thumbnail: "🙂",
+    thumbnailAsset: {
+      alt: "감정 매칭 앱 더미 썸네일",
+      eyebrow: "Coming Soon",
+      title: "감정 매칭",
+      description: "표정 카드, 상황 연결, 보호자 코칭",
+      badge: "준비 중",
+      emoji: "🙂",
+      background:
+        "linear-gradient(135deg, rgba(246,241,255,1) 0%, rgba(233,213,255,1) 52%, rgba(216,180,254,1) 100%)",
+      accent: "#9333ea",
+      foreground: "#581c87"
+    },
     launchMode: "placeholder",
     ageRange: "5세 이상",
     sessionLength: "5분"
@@ -291,6 +402,18 @@ export const appItems: AppItem[] = [
       "가정용 시각 스케줄 출력"
     ],
     thumbnail: "🪥",
+    thumbnailAsset: {
+      alt: "루틴 빌더 앱 더미 썸네일",
+      eyebrow: "Coming Soon",
+      title: "루틴 설계",
+      description: "시각 스케줄, 완료 체크, 생활 루틴",
+      badge: "준비 중",
+      emoji: "🪥",
+      background:
+        "linear-gradient(135deg, rgba(240,253,250,1) 0%, rgba(167,243,208,1) 52%, rgba(110,231,183,1) 100%)",
+      accent: "#059669",
+      foreground: "#065f46"
+    },
     launchMode: "placeholder",
     ageRange: "4세 이상",
     sessionLength: "상시 사용"
