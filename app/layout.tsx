@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Fredoka } from "next/font/google";
 
 import "@/app/globals.css";
-
-const fredoka = Fredoka({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-fredoka",
-  display: "swap"
-});
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aba-edu-portal.vercel.app"),
@@ -17,11 +11,11 @@ export const metadata: Metadata = {
     template: "%s | ABA 에듀 포털"
   },
   description:
-    "발달지연 아동 부모를 위한 ABA 교육 콘텐츠 포털. 짧고 실용적인 가이드와 교육 앱 정보를 한곳에서 제공합니다.",
+    "발달지연 자녀를 둔 부모를 위한 ABA 교육 가이드. 카드뉴스, 영상, 아티클로 배우고 교육 앱으로 바로 연습하세요.",
   openGraph: {
     title: "ABA 에듀 포털",
     description:
-      "발달지연 아동 부모를 위한 ABA 교육 콘텐츠 포털. 매거진, 가이드, 교육 앱을 한곳에서 제공합니다.",
+      "발달지연 자녀를 둔 부모를 위한 ABA 교육 가이드. 카드뉴스, 영상, 아티클로 배우고 교육 앱으로 바로 연습하세요.",
     siteName: "ABA 에듀 포털",
     type: "website"
   }
@@ -33,12 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={fredoka.variable}>
-      <body className="min-h-screen">
-        <div className="flex min-h-screen flex-col">
-          {/* Header — 재구현 예정 */}
-          <main className="flex-1">{children}</main>
-          {/* Footer — 재구현 예정 */}
+    <html lang="ko">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+      </head>
+      <body>
+        <div className="min-h-screen">
+          <Header />
+          <main>{children}</main>
+          <Footer />
         </div>
       </body>
     </html>
