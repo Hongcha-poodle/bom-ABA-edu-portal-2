@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ContentBodyRenderer } from "@/components/content-body-renderer";
+import { ContentThumbnail } from "@/components/content-thumbnail";
 import {
   getCategoryBySlug,
   getContentBySlug,
@@ -46,23 +47,7 @@ export default function ContentDetailPage({ params }: Props) {
       <section className="py-8 md:py-12">
         <div className="grid gap-5">
           <article className="surface-card max-w-[760px] p-6">
-            <div
-              className="flex min-h-[180px] flex-col justify-between gap-5 rounded-[18px] p-5"
-              style={{
-                background: item.coverAsset.background,
-                color: item.coverAsset.foreground ?? "var(--text-primary)"
-              }}
-            >
-              <span className="text-[13px] font-bold uppercase tracking-[0.04em]">
-                {item.coverAsset.eyebrow}
-              </span>
-              <div>
-                <strong className="visual-title block">{item.coverAsset.title}</strong>
-                <p className="mt-2 text-sm leading-6" style={{ color: "inherit", opacity: 0.82 }}>
-                  {item.coverAsset.description}
-                </p>
-              </div>
-            </div>
+            <ContentThumbnail asset={item.coverAsset} className="aspect-[1.9/1] w-full rounded-[18px]" />
             <p className="quiet mt-5">{item.summary}</p>
           </article>
 
@@ -82,18 +67,7 @@ export default function ContentDetailPage({ params }: Props) {
           <div className="grid gap-5 md:grid-cols-2">
             {relatedItems.map((related) => (
               <article key={related.slug} className="surface-card flex flex-col gap-5 p-6">
-                <div
-                  className="flex min-h-[180px] flex-col justify-between gap-5 rounded-[18px] p-5"
-                  style={{
-                    background: related.coverAsset.background,
-                    color: related.coverAsset.foreground ?? "var(--text-primary)"
-                  }}
-                >
-                  <span className="text-[13px] font-bold uppercase tracking-[0.04em]">
-                    {related.coverAsset.eyebrow}
-                  </span>
-                  <strong className="visual-title">{related.coverAsset.title}</strong>
-                </div>
+                <ContentThumbnail asset={related.coverAsset} />
                 <h3 className="text-[1.35rem] font-semibold leading-[1.24]">{related.title}</h3>
                 <p className="quiet">{related.summary}</p>
                 <Link href={`/content/${related.slug}`} className="button-ghost mt-auto">

@@ -34,7 +34,10 @@ describe("route components", () => {
     expect(
       screen.getByText("언어 카테고리에서 필요한 형식만 골라보세요")
     ).toBeInTheDocument();
-    expect(screen.getByText("필터 영상")).toBeInTheDocument();
+    expect(screen.getByAltText("따라 말하기 놀이를 표현한 더미 썸네일")).toHaveAttribute(
+      "src",
+      "/content-thumbnails/echoic-play.svg"
+    );
     expect(screen.getByText("따라 말하기를 놀이로 연결하는 미니 루틴")).toBeInTheDocument();
   });
 
@@ -82,8 +85,8 @@ describe("route components", () => {
   it("renders apps page summary cards", async () => {
     render(AppsPage());
 
-    expect(screen.getByText("앱으로 이어지는 학습 경험을 한눈에 정리했습니다")).toBeInTheDocument();
-    expect(screen.getByText("지금 바로 상세를 볼 수 있는 앱")).toBeInTheDocument();
+    expect(screen.getByText("지금 바로 사용할 수 있는 앱과 곧 출시될 앱을 함께 소개합니다.")).toBeInTheDocument();
+    expect(screen.getByText("지금 사용 가능한 앱")).toBeInTheDocument();
   });
 
   it("renders content detail page next actions", async () => {

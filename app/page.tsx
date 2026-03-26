@@ -1,40 +1,10 @@
 import Link from "next/link";
 
+import { ContentThumbnail } from "@/components/content-thumbnail";
 import { appItems, categories, contentItems, getCategoryBySlug, getContentTypeLabel } from "@/lib/content-data";
 
 const featuredContent = contentItems.slice(0, 3);
 const featuredApps = appItems.slice(0, 3);
-
-function CardVisual({
-  eyebrow,
-  title,
-  description,
-  background,
-  foreground
-}: {
-  eyebrow: string;
-  title: string;
-  description?: string;
-  background: string;
-  foreground?: string;
-}) {
-  return (
-    <div
-      className="flex min-h-[160px] flex-col justify-between gap-4 rounded-[10px] p-5"
-      style={{ background, color: foreground ?? "var(--text-primary)" }}
-    >
-      <span className="text-[12px] font-semibold uppercase tracking-[0.06em]">{eyebrow}</span>
-      <div>
-        <strong className="visual-title block">{title}</strong>
-        {description ? (
-          <p className="mt-2 text-sm leading-6" style={{ color: "inherit", opacity: 0.78 }}>
-            {description}
-          </p>
-        ) : null}
-      </div>
-    </div>
-  );
-}
 
 export default function HomePage() {
   return (
@@ -163,13 +133,7 @@ export default function HomePage() {
               const category = getCategoryBySlug(item.category);
               return (
                 <article key={item.slug} className="surface-card flex flex-col gap-4 p-5">
-                  <CardVisual
-                    eyebrow={item.coverAsset.eyebrow}
-                    title={item.coverAsset.title}
-                    description={item.coverAsset.description}
-                    background={item.coverAsset.background}
-                    foreground={item.coverAsset.foreground}
-                  />
+                  <ContentThumbnail asset={item.coverAsset} />
 
                   <div className="flex flex-wrap gap-1.5">
                     <span className="chip !min-h-7 !px-2.5 !text-[12px]">{category?.name}</span>
@@ -249,14 +213,8 @@ export default function HomePage() {
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {featuredApps.map((app) => (
-              <article key={app.slug} className="surface-card flex flex-col gap-4 p-5">
-                <CardVisual
-                  eyebrow={app.thumbnailAsset.eyebrow}
-                  title={app.thumbnailAsset.title}
-                  description={app.thumbnailAsset.description}
-                  background={app.thumbnailAsset.background}
-                  foreground={app.thumbnailAsset.foreground}
-                />
+                <article key={app.slug} className="surface-card flex flex-col gap-4 p-5">
+                <ContentThumbnail asset={app.thumbnailAsset} />
 
                 <div className="flex flex-wrap gap-1.5">
                   <span

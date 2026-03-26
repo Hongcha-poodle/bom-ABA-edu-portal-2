@@ -3,23 +3,29 @@
 :root {
   --font-pretendard: "PretendardVariable", "Pretendard Variable", "Pretendard", "Noto Sans KR",
     "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
-  --bg-canvas: #f6f6f3;
+
+  /* Base — warm neutral, 녹색 틴트 제거 */
+  --bg-canvas: #f9f9f7;
   --bg-surface: #ffffff;
-  --bg-subtle: #f0f1ee;
-  --border-default: #dde0da;
-  --border-strong: #bfc5bb;
-  --text-primary: #1c211c;
-  --text-secondary: #606760;
-  --text-tertiary: #7e867e;
+  --bg-subtle: #f3f3f1;
+  --border-default: #e5e5e2;
+  --border-strong: #cdcdc9;
+  --text-primary: #1a1a18;
+  --text-secondary: #66665e;
+  --text-tertiary: #99998f;
+
+  /* Accent — 브랜드 그린 유지 */
   --accent-primary: #2f6b4f;
-  --accent-primary-soft: #e4f0ea;
+  --accent-primary-soft: #ebf4ef;
   --accent-secondary: #6a7e99;
   --accent-secondary-soft: #eef3f8;
   --accent-warm: #c88a3d;
   --accent-warm-soft: #f9efe3;
-  --shadow-soft: 0 1px 3px rgba(16, 24, 16, 0.05);
-  --shadow-lift: 0 8px 24px rgba(31, 36, 31, 0.07);
-  --focus-ring: 0 0 0 3px rgba(47, 107, 79, 0.18);
+
+  /* Shadow — 최소화 (flat) */
+  --shadow-soft: none;
+  --shadow-lift: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --focus-ring: 0 0 0 3px rgba(47, 107, 79, 0.15);
 }
 
 *,
@@ -84,14 +90,13 @@ select {
 .surface-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
-  border-radius: 14px;
-  box-shadow: var(--shadow-soft);
-  transition: box-shadow 200ms ease, transform 200ms ease;
+  border-radius: 12px;
+  transition: border-color 180ms ease, background 180ms ease;
 }
 
 a.surface-card:hover {
-  box-shadow: var(--shadow-lift);
-  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  background: var(--bg-subtle);
 }
 
 .button-primary,
@@ -103,49 +108,60 @@ a.surface-card:hover {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: 999px;
-  padding: 0 18px;
+  border-radius: 8px;
+  padding: 0 16px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   transition:
     background 160ms ease,
     border-color 160ms ease,
-    box-shadow 160ms ease,
-    opacity 160ms ease,
-    transform 160ms ease;
+    color 160ms ease;
 }
 
 .button-primary {
-  background: var(--accent-primary);
-  color: #f9fbf8;
+  background: var(--text-primary);
+  color: var(--bg-surface);
+  border: 1px solid var(--text-primary);
 }
 
 .button-primary:hover {
-  opacity: 0.88;
+  background: var(--text-secondary);
+  border-color: var(--text-secondary);
 }
 
 .button-secondary,
 .chip {
-  background: var(--bg-surface);
+  background: transparent;
   color: var(--text-primary);
   border: 1px solid var(--border-default);
 }
 
 .button-secondary:hover {
   background: var(--bg-subtle);
+  border-color: var(--border-strong);
 }
 
 .button-ghost {
-  color: var(--accent-primary);
+  color: var(--text-secondary);
   padding: 0;
+  border: none;
+  border-radius: 0;
 }
 
 .button-ghost:hover {
-  opacity: 0.72;
+  color: var(--text-primary);
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .chip:hover {
   background: var(--bg-subtle);
+  border-color: var(--border-strong);
 }
 
 .quiet {

@@ -20,11 +20,21 @@ describe("home page", () => {
     ).toBe(true);
   });
 
-  it("renders content and app placeholder visuals instead of empty image labels", () => {
+  it("renders replaceable thumbnail images for featured content and apps", () => {
     render(HomePage());
 
-    expect(screen.getAllByText("요청 훈련").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("차례 놀이").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("한글 입력").length).toBeGreaterThan(0);
+    expect(
+      screen
+        .getAllByAltText("선택 보드와 요청 훈련 루틴을 표현한 더미 썸네일")
+        .some((image) => image.getAttribute("src") === "/content-thumbnails/requesting-choice-board.svg")
+    ).toBe(true);
+    expect(screen.getByAltText("차례 지키기 놀이를 표현한 더미 썸네일")).toHaveAttribute(
+      "src",
+      "/content-thumbnails/turn-taking-play.svg"
+    );
+    expect(screen.getByAltText("한글 키보드 학습 앱 더미 썸네일")).toHaveAttribute(
+      "src",
+      "/content-thumbnails/app-hangul-keyboard.svg"
+    );
   });
 });

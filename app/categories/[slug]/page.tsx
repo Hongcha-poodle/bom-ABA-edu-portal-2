@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { ContentThumbnail } from "@/components/content-thumbnail";
 import { getCategoryBySlug, getContentByCategory, getContentTypeLabel } from "@/lib/content-data";
 
 type Props = { params: { slug: string }; searchParams?: { type?: string } };
@@ -69,18 +70,7 @@ export default function CategoryPage({ params, searchParams }: Props) {
           <div className="grid gap-5 md:grid-cols-2">
             {filteredItems.map((item) => (
               <article key={item.slug} className="surface-card flex flex-col gap-5 p-6">
-                <div
-                  className="flex min-h-[180px] flex-col justify-between gap-5 rounded-[18px] p-5"
-                  style={{
-                    background: item.coverAsset.background,
-                    color: item.coverAsset.foreground ?? "var(--text-primary)"
-                  }}
-                >
-                  <span className="text-[13px] font-bold uppercase tracking-[0.04em]">
-                    {item.coverAsset.eyebrow}
-                  </span>
-                  <strong className="visual-title">{item.coverAsset.title}</strong>
-                </div>
+                <ContentThumbnail asset={item.coverAsset} />
 
                 <div className="flex flex-wrap gap-2">
                   <span className="chip !min-h-8 !px-3 !text-[13px]">

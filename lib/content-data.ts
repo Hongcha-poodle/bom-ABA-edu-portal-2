@@ -9,6 +9,7 @@ export type Category = {
 };
 
 export type VisualAsset = {
+  thumbnailSrc: string;
   src?: string;
   alt: string;
   eyebrow: string;
@@ -120,6 +121,7 @@ export const contentItems: ContentItem[] = [
     summary: "말로 표현이 어려운 아이가 그림 선택판을 통해 원하는 것을 요청하도록 돕는 4단계 루틴입니다.",
     coverImage: "카드뉴스: 그림 선택판, 간식 요청, 칭찬 루틴",
     coverAsset: {
+      thumbnailSrc: "/content-thumbnails/requesting-choice-board.svg",
       alt: "선택 보드와 요청 훈련 루틴을 표현한 더미 썸네일",
       eyebrow: "Card Story",
       title: "요청 훈련",
@@ -163,6 +165,7 @@ export const contentItems: ContentItem[] = [
     summary: "공놀이와 블록 놀이를 활용해 차례 지키기와 기다리기를 짧게 훈련하는 영상형 가이드입니다.",
     coverImage: "영상 가이드: 차례 지키기, 기다리기, 간단한 칭찬 문장",
     coverAsset: {
+      thumbnailSrc: "/content-thumbnails/turn-taking-play.svg",
       alt: "차례 지키기 놀이를 표현한 더미 썸네일",
       eyebrow: "Video Guide",
       title: "차례 놀이",
@@ -195,6 +198,7 @@ export const contentItems: ContentItem[] = [
     summary: "양치를 싫어하는 아이를 위해 과제를 작은 단계로 쪼개고 시각 단서를 붙이는 방법을 소개합니다.",
     coverImage: "아티클: 시각 스케줄, 단계 쪼개기, 성공 경험 쌓기",
     coverAsset: {
+      thumbnailSrc: "/content-thumbnails/toothbrushing-routine.svg",
       alt: "양치 루틴 단계를 보여주는 더미 썸네일",
       eyebrow: "Article",
       title: "양치 루틴",
@@ -237,6 +241,7 @@ export const contentItems: ContentItem[] = [
     summary: "울음, 떼쓰기, 던지기 행동을 막는 대신 무엇을 하게 할지 정하는 대체 행동 설계 가이드입니다.",
     coverImage: "인포그래픽: 문제 행동 관찰, 기능 추정, 대체 행동 설계",
     coverAsset: {
+      thumbnailSrc: "/content-thumbnails/replacement-behavior.svg",
       alt: "대체 행동 설계 흐름을 표현한 더미 썸네일",
       eyebrow: "Infographic",
       title: "대체 행동",
@@ -279,6 +284,7 @@ export const contentItems: ContentItem[] = [
     summary: "에코익 연습을 놀이 중간에 짧게 넣어 자연스럽게 말 모방 빈도를 늘리는 방법입니다.",
     coverImage: "영상: 소리 모방, 즉시 강화, 짧은 반복",
     coverAsset: {
+      thumbnailSrc: "/content-thumbnails/echoic-play.svg",
       alt: "따라 말하기 놀이를 표현한 더미 썸네일",
       eyebrow: "Play Loop",
       title: "소리 모방",
@@ -319,6 +325,7 @@ export const appItems: AppItem[] = [
     ],
     thumbnail: "⌨️",
     thumbnailAsset: {
+      thumbnailSrc: "/content-thumbnails/app-hangul-keyboard.svg",
       alt: "한글 키보드 학습 앱 더미 썸네일",
       eyebrow: "Live App",
       title: "한글 입력",
@@ -347,6 +354,7 @@ export const appItems: AppItem[] = [
     ],
     thumbnail: "🍎",
     thumbnailAsset: {
+      thumbnailSrc: "/content-thumbnails/app-food-sort.svg",
       alt: "음식 분류 게임 앱 더미 썸네일",
       eyebrow: "Live App",
       title: "음식 분류",
@@ -375,6 +383,7 @@ export const appItems: AppItem[] = [
     ],
     thumbnail: "🙂",
     thumbnailAsset: {
+      thumbnailSrc: "/content-thumbnails/app-emotion-matching.svg",
       alt: "감정 매칭 앱 더미 썸네일",
       eyebrow: "Coming Soon",
       title: "감정 매칭",
@@ -403,6 +412,7 @@ export const appItems: AppItem[] = [
     ],
     thumbnail: "🪥",
     thumbnailAsset: {
+      thumbnailSrc: "/content-thumbnails/app-routine-builder.svg",
       alt: "루틴 빌더 앱 더미 썸네일",
       eyebrow: "Coming Soon",
       title: "루틴 설계",
