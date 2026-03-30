@@ -35,7 +35,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="min-h-screen">
+        <div className="site-shell">
           <Header />
           <main>{children}</main>
           <Footer />

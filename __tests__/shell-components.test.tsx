@@ -40,10 +40,11 @@ describe("shell components", () => {
   it("renders footer action area", () => {
     render(<Footer />);
 
-    expect(screen.getByText("다음 단계")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "ABA 기초부터 보기" })).toHaveAttribute(
+    expect(screen.getByText("ABA 에듀 포털")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "콘텐츠" })).toHaveAttribute(
       "href",
       "/categories/aba-basics"
     );
+    expect(screen.getByRole("link", { name: "교육 앱" })).toHaveAttribute("href", "/apps");
   });
 });
