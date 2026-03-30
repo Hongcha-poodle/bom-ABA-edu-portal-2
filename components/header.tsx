@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/", label: "홈" },
-  { href: "/categories/language", label: "콘텐츠" },
+  { href: "/categories/aba-basics", label: "콘텐츠" },
   { href: "/apps", label: "앱 둘러보기" }
 ] as const;
 

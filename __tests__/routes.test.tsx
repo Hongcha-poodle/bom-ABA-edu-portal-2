@@ -76,9 +76,9 @@ describe("route components", () => {
     render(AboutPage());
 
     expect(screen.getByText("hello@aba-edu-portal.local")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "언어 콘텐츠 보기" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "ABA 기초 보기" })).toHaveAttribute(
       "href",
-      "/categories/language"
+      "/categories/aba-basics"
     );
   });
 

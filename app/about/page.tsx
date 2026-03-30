@@ -44,8 +44,8 @@ export default function AboutPage() {
           <h2 className="mt-3 text-[1.5rem] font-semibold">문의</h2>
           <p className="quiet mt-3">hello@aba-edu-portal.local</p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/categories/language" className="button-primary">
-              언어 콘텐츠 보기
+            <Link href="/categories/aba-basics" className="button-primary">
+              ABA 기초 보기
             </Link>
             <Link href="/apps" className="button-secondary">
               앱 둘러보기

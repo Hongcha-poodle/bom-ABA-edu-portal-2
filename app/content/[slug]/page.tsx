@@ -7,6 +7,7 @@ import { ContentThumbnail } from "@/components/content-thumbnail";
 import {
   getCategoryBySlug,
   getContentBySlug,
+  getContentLevelLabel,
   getContentTypeLabel,
   getRelatedContent
 } from "@/lib/content-data";
@@ -39,6 +40,10 @@ export default function ContentDetailPage({ params }: Props) {
           <span>{category?.name}</span>
           <span>·</span>
           <span>{getContentTypeLabel(item.contentType)}</span>
+          <span>·</span>
+          <span>{getContentLevelLabel(item.level)}</span>
+          <span>·</span>
+          <span>{item.ageRange}</span>
           <span>·</span>
           <span>{item.publishedAt}</span>
         </div>

@@ -13,8 +13,8 @@ export function Footer() {
               있게 구성했습니다.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <Link href="/categories/language" className="button-primary">
-                언어부터 보기
+              <Link href="/categories/aba-basics" className="button-primary">
+                ABA 기초부터 보기
               </Link>
               <Link href="/apps" className="button-secondary">
                 교육 앱 둘러보기
