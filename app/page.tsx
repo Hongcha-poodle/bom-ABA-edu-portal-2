@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { ContentThumbnail } from "@/components/content-thumbnail";
-import { appItems, categories, contentItems, getCategoryBySlug, getContentTypeLabel } from "@/lib/content-data";
+import { appItems, categories, contentItems, getCategoryBySlug, getContentLevelLabel, getContentTypeLabel } from "@/lib/content-data";
 
 const featuredContent = contentItems.slice(0, 3);
 const featuredApps = appItems.slice(0, 3);
@@ -22,8 +22,8 @@ export default function HomePage() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2.5">
-              <Link href="/categories/language" className="button-primary">
-                언어 콘텐츠부터 시작
+              <Link href="/categories/aba-basics" className="button-primary">
+                ABA 기초부터 시작
               </Link>
               <Link href="/apps" className="button-secondary">
                 교육 앱 보기
@@ -91,11 +91,11 @@ export default function HomePage() {
               어떤 주제부터 시작할까요?
             </h2>
             <p className="quiet mt-2 max-w-[60ch] text-sm">
-              언어, 사회성, 일상생활, 행동 관리 — 아이에게 지금 가장 필요한 주제를 고르세요.
+              ABA 기초부터 언어, 사회성, 일상생활, 행동 관리까지 — 아이에게 지금 가장 필요한 주제를 고르세요.
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {categories.map((category) => (
               <Link
                 key={category.slug}
@@ -140,6 +140,8 @@ export default function HomePage() {
                     <span className="chip !min-h-7 !px-2.5 !text-[12px]">
                       {getContentTypeLabel(item.contentType)}
                     </span>
+                    <span className="chip !min-h-7 !px-2.5 !text-[12px]">{getContentLevelLabel(item.level)}</span>
+                    <span className="chip !min-h-7 !px-2.5 !text-[12px]">{item.ageRange}</span>
                   </div>
 
                   <div>
@@ -149,8 +151,6 @@ export default function HomePage() {
 
                   <div className="quiet flex flex-wrap items-center gap-2 text-[13px]">
                     <span>{item.publishedAt}</span>
-                    <span>·</span>
-                    <span>{getContentTypeLabel(item.contentType)}</span>
                   </div>
 
                   <Link href={`/content/${item.slug}`} className="button-ghost mt-auto text-sm">
@@ -280,8 +280,8 @@ export default function HomePage() {
               어느 주제든, 짧은 가이드 하나로 오늘을 시작할 수 있습니다. 준비가 됐을 때 교육 앱도 함께 써보세요.
             </p>
             <div className="mt-5 flex flex-wrap gap-2.5">
-              <Link href="/categories/language" className="button-primary">
-                콘텐츠 둘러보기
+              <Link href="/categories/aba-basics" className="button-primary">
+                ABA 기초부터 보기
               </Link>
               <Link href="/about" className="button-secondary">
                 서비스 소개 보기

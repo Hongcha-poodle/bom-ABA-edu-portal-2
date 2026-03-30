@@ -53,6 +53,8 @@ type ContentBodyMap = {
   video: VideoBody;
 };
 
+export type ContentLevel = "beginner" | "intermediate";
+
 export type ContentItem = {
   slug: string;
   title: string;
@@ -62,6 +64,8 @@ export type ContentItem = {
   coverImage: string;
   coverAsset: VisualAsset;
   publishedAt: string;
+  level: ContentLevel;
+  ageRange: string;
 } & (
   | { contentType: "image-sequence"; body: ImageSequenceBody }
   | { contentType: "rich-text"; body: RichTextBody }
@@ -109,6 +113,13 @@ export const categories: Category[] = [
     description: "문제 행동을 관찰하고 대체 행동을 가르치는 실천 중심 팁",
     emoji: "🪄",
     softColor: "#e0f2fe"
+  },
+  {
+    slug: "aba-basics",
+    name: "ABA 기초",
+    description: "강화, 프롬프트, 소거 등 ABA 핵심 개념을 쉽게 풀어주는 입문 가이드",
+    emoji: "📘",
+    softColor: "#f0e6ff"
   }
 ];
 
@@ -118,6 +129,8 @@ export const contentItems: ContentItem[] = [
     title: "선택 보드로 요청하기 시작하기",
     category: "language",
     contentType: "image-sequence",
+    level: "beginner",
+    ageRange: "2-5세",
     summary: "말로 표현이 어려운 아이가 그림 선택판을 통해 원하는 것을 요청하도록 돕는 4단계 루틴입니다.",
     coverImage: "카드뉴스: 그림 선택판, 간식 요청, 칭찬 루틴",
     coverAsset: {
@@ -162,6 +175,8 @@ export const contentItems: ContentItem[] = [
     title: "집에서 시작하는 차례 지키기 놀이",
     category: "social",
     contentType: "video",
+    level: "beginner",
+    ageRange: "3-6세",
     summary: "공놀이와 블록 놀이를 활용해 차례 지키기와 기다리기를 짧게 훈련하는 영상형 가이드입니다.",
     coverImage: "영상 가이드: 차례 지키기, 기다리기, 간단한 칭찬 문장",
     coverAsset: {
@@ -195,6 +210,8 @@ export const contentItems: ContentItem[] = [
     title: "양치 루틴을 5단계로 나누는 방법",
     category: "daily-living",
     contentType: "rich-text",
+    level: "beginner",
+    ageRange: "3-7세",
     summary: "양치를 싫어하는 아이를 위해 과제를 작은 단계로 쪼개고 시각 단서를 붙이는 방법을 소개합니다.",
     coverImage: "아티클: 시각 스케줄, 단계 쪼개기, 성공 경험 쌓기",
     coverAsset: {
@@ -238,6 +255,8 @@ export const contentItems: ContentItem[] = [
     title: "문제 행동 대신 대체 행동을 가르치는 기본",
     category: "behavior",
     contentType: "rich-text",
+    level: "intermediate",
+    ageRange: "2-10세",
     summary: "울음, 떼쓰기, 던지기 행동을 막는 대신 무엇을 하게 할지 정하는 대체 행동 설계 가이드입니다.",
     coverImage: "인포그래픽: 문제 행동 관찰, 기능 추정, 대체 행동 설계",
     coverAsset: {
@@ -281,6 +300,8 @@ export const contentItems: ContentItem[] = [
     title: "따라 말하기를 놀이로 연결하는 미니 루틴",
     category: "language",
     contentType: "video",
+    level: "intermediate",
+    ageRange: "2-5세",
     summary: "에코익 연습을 놀이 중간에 짧게 넣어 자연스럽게 말 모방 빈도를 늘리는 방법입니다.",
     coverImage: "영상: 소리 모방, 즉시 강화, 짧은 반복",
     coverAsset: {
@@ -306,6 +327,144 @@ export const contentItems: ContentItem[] = [
         "블록을 쌓기 전에 한 음절 모방 기회를 넣습니다.",
         "성공 즉시 다음 놀이 순서로 넘어가 흐름을 끊지 않습니다.",
         "모방이 어려우면 입 모양 보기와 손짓 힌트를 함께 씁니다."
+      ]
+    }
+  },
+  {
+    slug: "what-is-aba",
+    title: "ABA란 무엇인가요? 부모가 알아야 할 핵심",
+    category: "aba-basics",
+    contentType: "rich-text",
+    level: "beginner",
+    ageRange: "전 연령",
+    summary: "ABA(응용행동분석)가 무엇이고, 왜 발달지연 아동에게 효과적인지 짧게 설명합니다.",
+    coverImage: "아티클: ABA 정의, 핵심 원리, 가정에서의 적용",
+    coverAsset: {
+      thumbnailSrc: "/content-thumbnails/requesting-choice-board.svg",
+      alt: "ABA 기초 개념을 설명하는 더미 썸네일",
+      eyebrow: "Basics",
+      title: "ABA 입문",
+      description: "행동 관찰, 원인 분석, 체계적 교수",
+      badge: "입문",
+      emoji: "📘",
+      background:
+        "linear-gradient(135deg, rgba(240,230,255,1) 0%, rgba(216,200,255,1) 52%, rgba(192,170,255,1) 100%)",
+      accent: "#7c3aed",
+      foreground: "#4c1d95"
+    },
+    publishedAt: "2026.03.14",
+    body: {
+      intro:
+        "ABA는 Applied Behavior Analysis의 약자로, 한국어로는 '응용행동분석'이라고 합니다. 행동의 원인을 관찰하고 환경을 조정해 바람직한 행동을 늘리는 과학적 접근법입니다.",
+      sections: [
+        {
+          heading: "ABA의 핵심: 행동에는 이유가 있다",
+          text: "아이가 하는 모든 행동에는 목적이 있습니다. 관심을 얻기 위해, 원하는 것을 요청하기 위해, 또는 싫은 상황을 피하기 위해 행동합니다. ABA는 이 목적을 파악한 뒤, 같은 목적을 더 적절한 방식으로 달성하도록 가르칩니다."
+        },
+        {
+          heading: "집에서도 할 수 있나요?",
+          text: "ABA는 전문 치료실에서만 하는 것이 아닙니다. 식사 시간, 놀이 시간, 외출 준비 등 일상 장면에서 부모가 직접 적용할 수 있는 간단한 원칙들이 있습니다. 이 포털에서는 그런 실천 중심의 가이드를 제공합니다."
+        }
+      ],
+      tips: [
+        "ABA는 벌을 주는 방법이 아닙니다. 바람직한 행동을 강화하는 데 초점을 둡니다.",
+        "전문가의 도움과 함께 가정에서의 일관된 연습이 가장 효과적입니다.",
+        "한 번에 여러 행동을 바꾸려 하지 말고, 하나씩 목표를 정하세요."
+      ]
+    }
+  },
+  {
+    slug: "reinforcement-basics",
+    title: "강화(Reinforcement)의 기본: 칭찬과 보상을 제대로 쓰는 법",
+    category: "aba-basics",
+    contentType: "image-sequence",
+    level: "beginner",
+    ageRange: "전 연령",
+    summary: "ABA의 가장 중요한 도구인 '강화'가 무엇이고, 일상에서 어떻게 사용하는지 4단계로 알아봅니다.",
+    coverImage: "카드뉴스: 강화 정의, 즉시 강화, 일관성 유지",
+    coverAsset: {
+      thumbnailSrc: "/content-thumbnails/turn-taking-play.svg",
+      alt: "강화의 기본 원리를 설명하는 더미 썸네일",
+      eyebrow: "Card Story",
+      title: "강화 기초",
+      description: "즉시 강화, 구체적 칭찬, 일관성",
+      badge: "핵심 개념",
+      emoji: "⭐",
+      background:
+        "linear-gradient(135deg, rgba(255,248,230,1) 0%, rgba(255,235,180,1) 52%, rgba(255,220,130,1) 100%)",
+      accent: "#d97706",
+      foreground: "#78350f"
+    },
+    publishedAt: "2026.03.13",
+    body: {
+      sections: [
+        {
+          title: "1. 강화란 '행동 직후에 좋은 결과를 주는 것'입니다",
+          imageLabel: "Scene 01",
+          alt: "아이가 요청한 직후 간식을 받는 장면",
+          caption: "아이가 바람직한 행동을 했을 때, 그 직후에 아이가 좋아하는 결과를 제공하면 그 행동이 다시 일어날 가능성이 높아집니다. 이것이 '강화'입니다."
+        },
+        {
+          title: "2. '잘했어'보다 '뭘 잘했는지' 말해주세요",
+          imageLabel: "Scene 02",
+          alt: "보호자가 구체적으로 칭찬하는 장면",
+          caption: "'잘했어' 대신 '사과 달라고 말해줬구나, 잘했어!'처럼 어떤 행동이 좋았는지 구체적으로 알려주면 아이가 무엇을 반복해야 하는지 이해합니다."
+        },
+        {
+          title: "3. 타이밍이 핵심: 3초 안에 강화하세요",
+          imageLabel: "Scene 03",
+          alt: "즉시 강화를 제공하는 타이밍 다이어그램",
+          caption: "행동과 강화 사이의 시간이 짧을수록 아이는 '이 행동 때문에 좋은 결과가 왔구나'를 명확히 연결합니다. 가능하면 3초 안에 반응하세요."
+        },
+        {
+          title: "4. 매번 같은 기준으로 강화하세요",
+          imageLabel: "Scene 04",
+          alt: "일관된 강화 기준을 보여주는 장면",
+          caption: "어떤 날은 칭찬하고 어떤 날은 무시하면 아이가 혼란스러워합니다. 같은 행동에는 같은 반응을 일관되게 유지하는 것이 중요합니다."
+        }
+      ]
+    }
+  },
+  {
+    slug: "prompting-guide",
+    title: "프롬프트(Prompt)란? 아이에게 힌트를 주는 기술",
+    category: "aba-basics",
+    contentType: "rich-text",
+    level: "beginner",
+    ageRange: "전 연령",
+    summary: "아이가 새로운 행동을 배울 때 적절한 힌트(프롬프트)를 주고 점차 줄여가는 방법을 안내합니다.",
+    coverImage: "아티클: 프롬프트 종류, 단계적 축소, 자립 유도",
+    coverAsset: {
+      thumbnailSrc: "/content-thumbnails/replacement-behavior.svg",
+      alt: "프롬프트 기술을 설명하는 더미 썸네일",
+      eyebrow: "Guide",
+      title: "프롬프트",
+      description: "힌트 단계, 점진적 축소, 자립 유도",
+      badge: "핵심 기술",
+      emoji: "👆",
+      background:
+        "linear-gradient(135deg, rgba(230,245,255,1) 0%, rgba(186,225,255,1) 52%, rgba(147,205,255,1) 100%)",
+      accent: "#2563eb",
+      foreground: "#1e3a5f"
+    },
+    publishedAt: "2026.03.11",
+    body: {
+      intro:
+        "프롬프트는 아이가 아직 혼자 할 수 없는 행동을 할 수 있도록 도와주는 '힌트'입니다. 손을 잡아 이끌기, 시범 보이기, 말로 알려주기 등 다양한 형태가 있으며, 핵심은 아이가 점차 도움 없이 혼자 할 수 있도록 줄여가는 것입니다.",
+      sections: [
+        {
+          heading: "프롬프트의 종류: 강한 힌트부터 약한 힌트까지",
+          text: "신체적 프롬프트(손을 잡아 동작 유도), 시범 프롬프트(직접 보여주기), 시각 프롬프트(그림이나 사진으로 안내), 언어 프롬프트(말로 알려주기), 제스처 프롬프트(가리키기) 순으로 도움의 강도가 줄어듭니다. 아이의 현재 수준에 맞는 프롬프트부터 시작하세요."
+        },
+        {
+          heading: "프롬프트 페이딩: 힌트를 줄여가는 과정",
+          text: "프롬프트의 목적은 아이가 결국 혼자 할 수 있게 되는 것입니다. 처음에는 손을 잡아 도와주다가, 팔꿈치만 가볍게 밀고, 그 다음에는 가리키기만 하고, 마지막에는 아무 힌트 없이 스스로 하게 됩니다. 이 과정을 '페이딩'이라고 합니다."
+        }
+      ],
+      tips: [
+        "아이가 실패하기 전에 프롬프트를 주세요. 실패 경험이 쌓이면 시도 자체를 꺼리게 됩니다.",
+        "같은 프롬프트를 너무 오래 유지하면 아이가 힌트에 의존하게 됩니다. 조금씩 줄여가세요.",
+        "프롬프트 후 아이가 성공하면 바로 강화하세요. 힌트를 받았더라도 칭찬받을 자격이 있습니다."
       ]
     }
   }
@@ -458,6 +617,15 @@ export function getContentTypeLabel(type: ContentType) {
   };
 
   return labels[type];
+}
+
+export function getContentLevelLabel(level: ContentLevel) {
+  const labels: Record<ContentLevel, string> = {
+    beginner: "입문",
+    intermediate: "중급"
+  };
+
+  return labels[level];
 }
 
 export function getContentTypesForCategory(slug: string) {

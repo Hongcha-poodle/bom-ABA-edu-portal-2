@@ -8,9 +8,9 @@ describe("home page", () => {
   it("renders primary CTAs with visible labels", () => {
     render(HomePage());
 
-    expect(screen.getByRole("link", { name: "언어 콘텐츠부터 시작" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "ABA 기초부터 시작" })).toHaveAttribute(
       "href",
-      "/categories/language"
+      "/categories/aba-basics"
     );
     expect(screen.getByRole("link", { name: "교육 앱 보기" })).toHaveAttribute("href", "/apps");
     expect(

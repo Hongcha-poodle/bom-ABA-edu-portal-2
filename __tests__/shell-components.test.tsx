@@ -24,13 +24,13 @@ describe("shell components", () => {
     expect(screen.getByRole("link", { name: "홈" })).toHaveAttribute("href", "/");
     expect(screen.getByRole("link", { name: "콘텐츠" })).toHaveAttribute(
       "href",
-      "/categories/language"
+      "/categories/aba-basics"
     );
     expect(screen.getByRole("link", { name: "앱 둘러보기" })).toHaveAttribute("href", "/apps");
   });
 
   it("marks active navigation in header", () => {
-    usePathnameMock.mockReturnValue("/categories/language");
+    usePathnameMock.mockReturnValue("/categories/aba-basics");
 
     render(<Header />);
 
@@ -41,9 +41,9 @@ describe("shell components", () => {
     render(<Footer />);
 
     expect(screen.getByText("다음 단계")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "언어부터 보기" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "ABA 기초부터 보기" })).toHaveAttribute(
       "href",
-      "/categories/language"
+      "/categories/aba-basics"
     );
   });
 });

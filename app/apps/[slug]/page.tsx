@@ -66,7 +66,7 @@ export default function AppDetailPage({ params }: Props) {
             <a href="#" className="button-primary">
               앱 실행
             </a>
-            <Link href="/categories/language" className="button-secondary">
+            <Link href="/categories/aba-basics" className="button-secondary">
               관련 콘텐츠 보기
             </Link>
           </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ContentThumbnail } from "@/components/content-thumbnail";
-import { getCategoryBySlug, getContentByCategory, getContentTypeLabel } from "@/lib/content-data";
+import { getCategoryBySlug, getContentByCategory, getContentLevelLabel, getContentTypeLabel } from "@/lib/content-data";
 
 type Props = { params: { slug: string }; searchParams?: { type?: string } };
 
@@ -76,6 +76,8 @@ export default function CategoryPage({ params, searchParams }: Props) {
                   <span className="chip !min-h-8 !px-3 !text-[13px]">
                     {getContentTypeLabel(item.contentType)}
                   </span>
+                  <span className="chip !min-h-8 !px-3 !text-[13px]">{getContentLevelLabel(item.level)}</span>
+                  <span className="chip !min-h-8 !px-3 !text-[13px]">{item.ageRange}</span>
                   <span className="chip !min-h-8 !px-3 !text-[13px]">{item.publishedAt}</span>
                 </div>
 
