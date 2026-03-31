@@ -41,7 +41,7 @@ describe("shell components", () => {
     render(<Footer />);
 
     expect(screen.getByText("ABA 에듀 포털")).toBeInTheDocument();
-    expect(screen.getByText(/오늘 바로 아이와 시도할 수 있도록/)).toBeInTheDocument();
+    expect(screen.getByText(/콘텐츠와 교육 앱을 한 흐름으로 연결한/)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "콘텐츠" })).toHaveAttribute(
       "href",
       "/categories/aba-basics"

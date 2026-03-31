@@ -13,10 +13,10 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 bg-[color:rgba(251,247,240,0.78)] shadow-[0_10px_30px_rgba(70,52,31,0.06)] backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-[rgba(17,17,17,0.08)] bg-[color:rgba(255,255,255,0.9)] backdrop-blur">
       <div className="page-shell flex min-h-[72px] items-center justify-between gap-6 py-3 max-md:flex-col max-md:items-start">
         <Link href="/" className="inline-flex min-h-11 items-center gap-3" aria-label="ABA 에듀 포털 홈">
-          <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[linear-gradient(180deg,rgba(255,250,243,0.98),rgba(243,234,221,0.92))] text-sm font-semibold text-[var(--accent-primary)] shadow-[0_12px_24px_rgba(82,61,35,0.12)]">
+          <span className="grid h-11 w-11 place-items-center bg-[rgba(17,17,17,0.05)] text-sm font-semibold text-[var(--accent-primary)]">
             ABA
           </span>
           <span className="flex flex-col gap-0.5">
@@ -38,12 +38,12 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="inline-flex min-h-11 items-center justify-center rounded-full px-4 text-sm font-semibold text-[var(--text-secondary)] transition hover:bg-[color:rgba(255,248,238,0.88)]"
+                className="inline-flex min-h-11 items-center justify-center px-4 text-sm font-semibold text-[var(--text-secondary)] transition hover:bg-[rgba(17,17,17,0.04)]"
                 aria-current={isActive ? "page" : undefined}
                 style={
                   isActive
                     ? {
-                        background: "rgba(255,248,238,0.96)",
+                        background: "rgba(17,17,17,0.06)",
                         color: "var(--text-primary)"
                       }
                     : undefined

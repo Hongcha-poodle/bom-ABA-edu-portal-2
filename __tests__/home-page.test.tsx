@@ -26,10 +26,8 @@ describe("home page", () => {
   it("renders parent-first hero messaging", () => {
     render(HomePage());
 
-    expect(
-      screen.getByRole("heading", { name: /오늘 필요한 정보만 빠르게 읽고,/ })
-    ).toBeInTheDocument();
-    expect(screen.getByText(/부모가 먼저 이해하고 결정할 수 있도록/)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /필요한 정보만 빠르게 읽고,/ })).toBeInTheDocument();
+    expect(screen.getByText(/부모가 탐색하고 판단하기 쉬운 방식으로 구성했습니다/)).toBeInTheDocument();
     expect(screen.getByText("빠른 판단")).toBeInTheDocument();
   });
 

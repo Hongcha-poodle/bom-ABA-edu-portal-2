@@ -11,7 +11,7 @@ type ContentThumbnailProps = {
 
 export function ContentThumbnail({
   asset,
-  className = "aspect-[1.6/1] w-full rounded-[18px]",
+  className = "aspect-[1.6/1] w-full",
   sizes
 }: ContentThumbnailProps) {
   const style = {

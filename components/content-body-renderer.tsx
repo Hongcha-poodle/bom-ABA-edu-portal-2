@@ -10,7 +10,7 @@ export function ContentBodyRenderer({ item }: Props) {
       <div className="editorial-grid narrow-reading-width" data-testid="image-sequence-body">
         {item.body.sections.map((section) => (
           <section key={section.title} className="surface-card p-6">
-            <div className="rounded-[20px] border border-[var(--border-default)] bg-[var(--bg-subtle)] p-6">
+            <div className="border border-[var(--border-default)] bg-[var(--bg-subtle)] p-6">
               <span className="eyebrow">{section.imageLabel}</span>
               <h2 className="section-title mt-3 text-[1.75rem]">{section.title}</h2>
             </div>
