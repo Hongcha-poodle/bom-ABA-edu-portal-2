@@ -29,9 +29,6 @@ export function AppCard({ app, ctaLabel, emphasize = false }: AppCardProps) {
       <div className="card-copy">
         <h3 className="card-title">{app.name}</h3>
         <p className="card-summary">{app.shortDescription}</p>
-        <p className="card-supporting">
-          짧은 세션으로 아이와 바로 연습할 수 있는 앱
-        </p>
       </div>
 
       <ul className="feature-list">

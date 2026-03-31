@@ -399,7 +399,7 @@ a.surface-card:hover {
 .meta-divider {
   width: 4px;
   height: 4px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--border-strong);
 }
 
@@ -455,6 +455,7 @@ a.surface-card:hover {
   justify-content: flex-start;
   min-height: 36px;
   padding: 0;
+  gap: 6px;
   color: var(--accent-primary);
   border: none;
   font-size: 14px;
@@ -466,7 +467,7 @@ a.surface-card:hover {
 
 .button-ghost:hover {
   color: var(--text-primary);
-  gap: 14px;
+  gap: 10px;
 }
 
 .chip {

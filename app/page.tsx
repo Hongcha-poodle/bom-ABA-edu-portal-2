@@ -95,7 +95,7 @@ export default function HomePage() {
               >
                 <span className="category-shortcut__badge">{category.emoji}</span>
                 <div>
-                  <h3 className="text-[1.05rem] font-semibold">{category.name}</h3>
+                  <h3 className="card-title">{category.name}</h3>
                   <p className="quiet mt-1.5 text-sm">{category.description}</p>
                   <span className="category-shortcut__meta mt-3 inline-block">바로 살펴보기</span>
                 </div>
@@ -143,21 +143,21 @@ export default function HomePage() {
             <div className="support-grid md:grid-cols-2">
               <article className="info-panel">
                 <span className="eyebrow">Quick Win</span>
-                <h3 className="mt-3 text-[1.1rem] font-semibold">짧게 읽고 바로 실천하기</h3>
+                <h3 className="mt-3 visual-title">짧게 읽고 바로 실천하기</h3>
                 <p className="quiet mt-2 text-sm">
                   핵심 문장과 바로 해볼 행동만 담았습니다.
                 </p>
               </article>
               <article className="info-panel">
                 <span className="eyebrow">Trust &amp; Rhythm</span>
-                <h3 className="mt-3 text-[1.1rem] font-semibold">읽기 쉬운 정보 순서</h3>
+                <h3 className="mt-3 visual-title">읽기 쉬운 정보 순서</h3>
                 <p className="quiet mt-2 text-sm">
                   제목, 요약, 다음 행동 순서로 바로 읽힙니다.
                 </p>
               </article>
               <article className="info-panel md:col-span-2">
                 <span className="eyebrow">5-minute Routine</span>
-                <h3 className="mt-3 text-[1.1rem] font-semibold">오늘의 5분 루틴으로 연결합니다</h3>
+                <h3 className="mt-3 visual-title">오늘의 5분 루틴으로 연결합니다</h3>
                 <p className="quiet mt-2 text-sm">
                   콘텐츠를 읽고 나면 다음에 할 일이 자연스럽게 이어집니다.
                 </p>

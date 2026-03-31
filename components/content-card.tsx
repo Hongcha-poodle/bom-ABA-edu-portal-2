@@ -3,8 +3,6 @@ import Link from "next/link";
 import { ContentThumbnail } from "@/components/content-thumbnail";
 import {
   getCategoryBySlug,
-  getContentLevelLabel,
-  getContentTypeLabel,
   type ContentItem
 } from "@/lib/content-data";
 
