@@ -21,7 +21,7 @@ export default function HomePage() {
           <div className="hero-shell">
             <div className="hero-panel hero-grid border-t border-[rgba(17,17,17,0.16)]">
               <span className="eyebrow">Parent-first ABA Guide</span>
-              <p className="hero-kicker">복잡하지 않게, 필요한 정보만 바로 읽는 구조</p>
+              <p className="hero-kicker">복잡하지 않게, 필요한 것만 바로 찾을 수 있습니다</p>
               <h1 className="page-title">
                 필요한 정보만 빠르게 읽고,
                 <br />
@@ -42,7 +42,7 @@ export default function HomePage() {
 
               <div className="hero-facts pt-4">
                 {[
-                  ["빠른 판단", "연령, 읽는 시간, 핵심 효용을 먼저 보여줍니다."],
+                  ["빠른 판단", "연령, 읽는 시간, 핵심 내용을 한눈에 확인합니다."],
                   ["실행 중심", "오늘 해볼 한 가지와 다음 행동을 함께 제안합니다."],
                   ["심플한 화면", "중요한 내용이 한눈에 들어옵니다."]
                 ].map(([title, description]) => (
@@ -63,7 +63,7 @@ export default function HomePage() {
 
               <div className="hero-checklist mt-6">
                 {[
-                  ["1. 가장 급한 장면 선택", "언어, 사회성, 생활 루틴 등 막히는 장면을 기준으로 탐색합니다."],
+                  ["1. 어려운 순간 골라보기", "언어, 사회성, 생활 루틴 중 지금 가장 어렵게 느껴지는 것부터 찾아보세요."],
                   ["2. 5분 안에 읽기", "카드뉴스, 영상, 아티클 중 지금 집중할 수 있는 형식으로 시작합니다."],
                   ["3. 앱으로 바로 이어가기", "같은 주제의 앱이나 다음 가이드로 연결해 반복 연습합니다."]
                 ].map(([title, copy]) => (
@@ -83,7 +83,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Topic Shortcuts"
             title="어떤 주제부터 시작할까요?"
-            description="지금 가장 필요한 장면을 고르세요."
+            description="지금 가장 필요한 주제를 골라보세요."
           />
 
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
@@ -95,7 +95,7 @@ export default function HomePage() {
               >
                 <span className="category-shortcut__badge">{category.emoji}</span>
                 <div>
-                  <h3 className="text-[1.05rem] font-semibold">{category.name}</h3>
+                  <h3 className="card-title">{category.name}</h3>
                   <p className="quiet mt-1.5 text-sm">{category.description}</p>
                   <span className="category-shortcut__meta mt-3 inline-block">바로 살펴보기</span>
                 </div>
@@ -110,7 +110,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Featured Content"
             title="지금 바로 읽기 좋은 콘텐츠"
-            description="핵심 효용과 적용 장면을 빠르게 확인하세요."
+            description="핵심 내용과 활용 방법을 빠르게 확인하세요."
           />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {featuredContent.map((item, index) => (
@@ -131,10 +131,10 @@ export default function HomePage() {
               <div>
                 <span className="eyebrow">Parent Guide</span>
                 <h2 className="section-title mt-4">부모가 먼저, 작게 시작합니다</h2>
-                <p className="support-note mt-3">오늘 한 장면, 한 문장만 정해도 충분합니다.</p>
+                <p className="support-note mt-3">오늘 한 가지, 한 문장만 시작해도 충분합니다.</p>
               </div>
               <ul className="feature-list">
-                <li>한 번에 하나의 목표, 오늘 그 장면만 짧게 연습합니다.</li>
+                <li>한 번에 하나의 목표만 정하고, 오늘 바로 짧게 시도합니다.</li>
                 <li>두 가지 선택지부터 시작해 아이의 부담을 줄입니다.</li>
                 <li>같은 주제의 앱이나 다음 읽을거리로 이어갑니다.</li>
               </ul>
@@ -143,21 +143,21 @@ export default function HomePage() {
             <div className="support-grid md:grid-cols-2">
               <article className="info-panel">
                 <span className="eyebrow">Quick Win</span>
-                <h3 className="mt-3 text-[1.1rem] font-semibold">짧게 읽고 바로 써보는 구조</h3>
+                <h3 className="mt-3 visual-title">짧게 읽고 바로 실천하기</h3>
                 <p className="quiet mt-2 text-sm">
                   핵심 문장과 바로 해볼 행동만 담았습니다.
                 </p>
               </article>
               <article className="info-panel">
                 <span className="eyebrow">Trust &amp; Rhythm</span>
-                <h3 className="mt-3 text-[1.1rem] font-semibold">정보가 먼저 읽히는 리듬</h3>
+                <h3 className="mt-3 visual-title">읽기 쉬운 정보 순서</h3>
                 <p className="quiet mt-2 text-sm">
                   제목, 요약, 다음 행동 순서로 바로 읽힙니다.
                 </p>
               </article>
               <article className="info-panel md:col-span-2">
                 <span className="eyebrow">5-minute Routine</span>
-                <h3 className="mt-3 text-[1.1rem] font-semibold">오늘의 5분 루틴으로 연결합니다</h3>
+                <h3 className="mt-3 visual-title">오늘의 5분 루틴으로 연결합니다</h3>
                 <p className="quiet mt-2 text-sm">
                   콘텐츠를 읽고 나면 다음에 할 일이 자연스럽게 이어집니다.
                 </p>
@@ -172,7 +172,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Education Apps"
             title="읽고 나서 아이와 바로 연습하세요"
-            description="같은 흐름의 교육 앱으로 바로 이어서 연습하세요."
+            description="읽은 내용과 연결된 교육 앱을 바로 찾아보세요."
           />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {featuredApps.map((app) => (
