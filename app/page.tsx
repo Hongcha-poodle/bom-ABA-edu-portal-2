@@ -22,14 +22,13 @@ export default function HomePage() {
             <div className="hero-panel hero-grid border-t border-[rgba(17,17,17,0.16)]">
               <span className="eyebrow">Parent-first ABA Guide</span>
               <p className="hero-kicker">복잡하지 않게, 필요한 정보만 바로 읽는 구조</p>
-              <h1 className="page-title text-[clamp(2.1rem,4vw,3.5rem)]">
+              <h1 className="page-title">
                 필요한 정보만 빠르게 읽고,
                 <br />
                 아이와 바로 실천하세요
               </h1>
               <p className="hero-summary">
-                ABA 핵심 개념부터 생활 적용 예시, 교육 앱까지 한 흐름으로 정리했습니다.
-                부모가 탐색하고 판단하기 쉬운 방식으로 구성했습니다.
+                ABA 핵심 개념, 생활 적용 예시, 교육 앱을 한 곳에서 바로 찾을 수 있습니다.
               </p>
 
               <div className="intro-actions pt-4">
@@ -45,7 +44,7 @@ export default function HomePage() {
                 {[
                   ["빠른 판단", "연령, 읽는 시간, 핵심 효용을 먼저 보여줍니다."],
                   ["실행 중심", "오늘 해볼 한 가지와 다음 행동을 함께 제안합니다."],
-                  ["심플한 화면", "장식보다 내용이 먼저 보이는 흐름으로 정리했습니다."]
+                  ["심플한 화면", "중요한 내용이 한눈에 들어옵니다."]
                 ].map(([title, description]) => (
                   <div key={title} className="hero-fact">
                     <strong>{title}</strong>
@@ -57,7 +56,7 @@ export default function HomePage() {
 
             <aside className="hero-panel border-t border-[rgba(17,17,17,0.16)]">
               <span className="eyebrow">Today&apos;s Start</span>
-              <h2 className="section-title mt-4 text-[1.7rem]">필요한 순서만 담았습니다</h2>
+              <h2 className="section-title mt-4">오늘 어디서 시작할까요?</h2>
               <p className="quiet mt-3 text-sm">
                 우리 아이에게 맞는 것, 시작 방법, 다음 단계를 한 번에 확인하세요.
               </p>
@@ -131,7 +130,7 @@ export default function HomePage() {
             <div className="support-panel">
               <div>
                 <span className="eyebrow">Parent Guide</span>
-                <h2 className="section-title mt-4 text-[1.7rem]">부모가 먼저 안심하고 시작합니다</h2>
+                <h2 className="section-title mt-4">부모가 먼저, 작게 시작합니다</h2>
                 <p className="support-note mt-3">오늘 한 장면, 한 문장만 정해도 충분합니다.</p>
               </div>
               <ul className="feature-list">
@@ -146,21 +145,21 @@ export default function HomePage() {
                 <span className="eyebrow">Quick Win</span>
                 <h3 className="mt-3 text-[1.1rem] font-semibold">짧게 읽고 바로 써보는 구조</h3>
                 <p className="quiet mt-2 text-sm">
-                  핵심 문장과 바로 해볼 행동만 남겨 시작 장벽을 낮췄습니다.
+                  핵심 문장과 바로 해볼 행동만 담았습니다.
                 </p>
               </article>
               <article className="info-panel">
                 <span className="eyebrow">Trust &amp; Rhythm</span>
                 <h3 className="mt-3 text-[1.1rem] font-semibold">정보가 먼저 읽히는 리듬</h3>
                 <p className="quiet mt-2 text-sm">
-                  제목, 요약, 다음 행동이 먼저 보이는 단순한 흐름으로 구성했습니다.
+                  제목, 요약, 다음 행동 순서로 바로 읽힙니다.
                 </p>
               </article>
               <article className="info-panel md:col-span-2">
                 <span className="eyebrow">5-minute Routine</span>
                 <h3 className="mt-3 text-[1.1rem] font-semibold">오늘의 5분 루틴으로 연결합니다</h3>
                 <p className="quiet mt-2 text-sm">
-                  콘텐츠와 앱을 같은 흐름으로 이어 다음 행동을 쉽게 선택할 수 있게 했습니다.
+                  콘텐츠를 읽고 나면 다음에 할 일이 자연스럽게 이어집니다.
                 </p>
               </article>
             </div>

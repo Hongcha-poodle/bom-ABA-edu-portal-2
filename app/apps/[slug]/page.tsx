@@ -50,7 +50,7 @@ export default function AppDetailPage({ params }: Props) {
 
             <article className="support-panel">
               <span className="eyebrow">How To Use</span>
-              <h2 className="section-title mt-3 text-[1.5rem]">앱 실행 전 알아두면 좋은 점</h2>
+              <h2 className="section-title mt-3 text-[1.25rem]">앱 실행 전 알아두면 좋은 점</h2>
               <ul className="quiet mt-4 grid gap-2 pl-5">
                 {app.features.map((feature) => (
                   <li key={feature}>{feature}</li>
