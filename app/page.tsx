@@ -21,7 +21,6 @@ export default function HomePage() {
           <div className="hero-shell">
             <div className="hero-panel hero-grid border-t border-[rgba(17,17,17,0.16)]">
               <span className="eyebrow">Parent-first ABA Guide</span>
-              <p className="hero-kicker">복잡하지 않게, 필요한 것만 바로 찾을 수 있습니다</p>
               <h1 className="page-title">
                 필요한 정보만 빠르게 읽고,
                 <br />
@@ -44,7 +43,7 @@ export default function HomePage() {
                 {[
                   ["빠른 판단", "연령, 읽는 시간, 핵심 내용을 한눈에 확인합니다."],
                   ["실행 중심", "오늘 해볼 한 가지와 다음 행동을 함께 제안합니다."],
-                  ["심플한 화면", "중요한 내용이 한눈에 들어옵니다."]
+                  ["앱으로 이어가기", "읽은 내용과 연결된 교육 앱을 바로 찾아 시작합니다."]
                 ].map(([title, description]) => (
                   <div key={title} className="hero-fact">
                     <strong>{title}</strong>

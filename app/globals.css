@@ -656,7 +656,7 @@ a.surface-card:hover {
 
 @media (max-width: 639px) {
   .page-shell {
-    width: min(calc(100% - 24px), var(--content-max));
+    width: min(calc(100% - 32px), var(--content-max));
   }
 
   .page-intro {
@@ -674,6 +674,39 @@ a.surface-card:hover {
   .hero-panel,
   .support-panel {
     padding: 20px;
+  }
+
+  /* 중첩 카드 플랫화: hero-panel 내부 카드들을 구분선 목록으로 */
+  .hero-facts {
+    gap: 0;
+  }
+
+  .hero-fact {
+    background: transparent;
+    padding: 14px 0;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  }
+
+  .hero-fact:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .hero-checklist {
+    gap: 0;
+  }
+
+  .hero-checklist article {
+    background: transparent;
+    padding: 14px 0;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  }
+
+  .hero-checklist article:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 }
 
