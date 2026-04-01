@@ -32,7 +32,7 @@ describe("route components", () => {
     );
 
     expect(
-      screen.getByText("언어 카테고리에서 필요한 형식만 골라보세요")
+      screen.getByText("말문 트기 (요청하고 따라 말하는 법) 카테고리에서 필요한 형식만 골라보세요")
     ).toBeInTheDocument();
     expect(screen.getByAltText("따라 말하기 놀이를 표현한 더미 썸네일")).toHaveAttribute(
       "src",

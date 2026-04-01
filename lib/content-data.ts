@@ -88,35 +88,35 @@ export type AppItem = {
 export const categories: Category[] = [
   {
     slug: "language",
-    name: "언어",
+    name: "말문 트기 (요청하고 따라 말하는 법)",
     description: "말문 열기, 요청하기, 따라 말하기처럼 언어 발달을 돕는 콘텐츠",
     emoji: "🗣️",
     softColor: "#fae8ff"
   },
   {
     slug: "social",
-    name: "사회성",
+    name: "어울려 놀기 (눈 맞추고 차례 기다리기)",
     description: "차례 지키기, 눈맞춤, 함께 놀이하기 같은 사회성 훈련 가이드",
     emoji: "🤝",
     softColor: "#ccfbea"
   },
   {
     slug: "daily-living",
-    name: "일상생활",
+    name: "혼자서 해보기 (밥 먹고 옷 입는 루틴 만들기)",
     description: "식사, 옷 입기, 정리정돈 등 루틴을 만드는 생활 기술 콘텐츠",
     emoji: "🧺",
     softColor: "#fef9c3"
   },
   {
     slug: "behavior",
-    name: "행동 관리",
+    name: "마음 알아주기 (떼쓰는 이유를 이해하고 바른 행동 돕기)",
     description: "문제 행동을 관찰하고 대체 행동을 가르치는 실천 중심 팁",
     emoji: "🪄",
     softColor: "#e0f2fe"
   },
   {
     slug: "aba-basics",
-    name: "ABA 기초",
+    name: "처음 만나는 ABA (가장 쉬운 ABA 입문)",
     description: "강화, 프롬프트, 소거 등 ABA 핵심 개념을 쉽게 풀어주는 입문 가이드",
     emoji: "📘",
     softColor: "#f0e6ff"
@@ -131,7 +131,7 @@ export const contentItems: ContentItem[] = [
     contentType: "image-sequence",
     level: "beginner",
     ageRange: "2-5세",
-    summary: "말로 표현이 어려운 아이가 그림 선택판을 통해 원하는 것을 요청하도록 돕는 4단계 루틴입니다.",
+    summary: "말 대신 그림으로 \"이거 줘\" 표현하기: 아직 말이 트이지 않은 아이도, 그림을 짚으며 답답함 없이 원하는 걸 표현하는 4단계 방법이에요.",
     coverImage: "카드뉴스: 그림 선택판, 간식 요청, 칭찬 루틴",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/requesting-choice-board.svg",
@@ -476,7 +476,7 @@ export const appItems: AppItem[] = [
     name: "시아 한글 키보드",
     status: "live",
     shortDescription:
-      "자모 인식과 단어 입력을 놀이처럼 익히는 한글 보조 키보드 앱입니다.",
+      "글자를 몰라도 톡톡, 소리로 친해지는 첫 한글: 큰 버튼과 소리로, 아이가 스스로 문장을 만들어보며 한글에 흥미를 가져요.",
     features: [
       "큰 터치 타깃과 명확한 음성 피드백",
       "자주 쓰는 요청 문장을 빠르게 구성",
@@ -505,7 +505,7 @@ export const appItems: AppItem[] = [
     name: "냠냠 쩝쩝",
     status: "live",
     shortDescription:
-      "음식 분류 게임으로 어휘 확장과 범주화 학습을 돕는 인터랙티브 앱입니다.",
+      "\"사과는 과일, 당근은 채소!\" 놀면서 배우는 단어 분류: 음식 그림을 옮기다 보면, 자연스럽게 단어의 뜻과 종류를 깨치게 돼요.",
     features: [
       "음식 카테고리별 드래그 앤 드롭 활동",
       "정답 시 시각·청각 강화 제공",

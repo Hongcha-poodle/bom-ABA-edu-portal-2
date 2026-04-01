@@ -46,7 +46,7 @@ export default function AppDetailPage({ params }: Props) {
       <section className="section-block section-block--blue page-section">
         <div className="page-shell">
           <div className="grid gap-5 md:grid-cols-[1.02fr_0.98fr]">
-            <AppCard app={app} ctaLabel="앱 상세 보기" emphasize />
+            <AppCard app={app} ctaLabel="우리 아이와 해보기" emphasize />
 
             <article className="support-panel">
               <span className="eyebrow">How To Use</span>

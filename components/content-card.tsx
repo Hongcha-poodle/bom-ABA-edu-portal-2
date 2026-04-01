@@ -40,7 +40,7 @@ export function ContentCard({
       </div>
 
       <Link href={`/content/${item.slug}`} className="button-ghost mt-auto">
-        시작하기 →
+        5분 가이드 읽기
       </Link>
     </article>
   );
