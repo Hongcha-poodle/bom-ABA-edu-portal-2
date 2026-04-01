@@ -39,7 +39,7 @@ export function AppCard({ app, ctaLabel, emphasize = false }: AppCardProps) {
 
       {href ? (
         <Link href={href} className="button-secondary mt-auto">
-          {ctaLabel ?? "앱 상세 보기"}
+          {ctaLabel ?? "우리 아이와 해보기"}
         </Link>
       ) : (
         <span className="button-secondary mt-auto" aria-disabled="true">

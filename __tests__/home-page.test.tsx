@@ -18,7 +18,7 @@ describe("home page", () => {
     );
     expect(
       screen
-        .getAllByRole("link", { name: "앱 상세 보기" })
+        .getAllByRole("link", { name: "우리 아이와 해보기" })
         .every((link) => link.getAttribute("href") === "/apps/sia-hangul-keyboard")
     ).toBe(true);
   });
@@ -26,9 +26,9 @@ describe("home page", () => {
   it("renders parent-first hero messaging", () => {
     render(HomePage());
 
-    expect(screen.getByRole("heading", { name: /필요한 정보만 빠르게 읽고,/ })).toBeInTheDocument();
-    expect(screen.getByText(/부모가 탐색하고 판단하기 쉬운 방식으로 구성했습니다/)).toBeInTheDocument();
-    expect(screen.getByText("빠른 판단")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /오늘 배운 ABA, 지금 바로 우리 아이와 시작해볼까요\?/ })).toBeInTheDocument();
+    expect(screen.getByText(/복잡한 이론은 덜어내고, 아이의 일상에 꼭 맞는 실전 팁과 맞춤형 교육 앱만 모았어요/)).toBeInTheDocument();
+    expect(screen.getByText("한눈에 쏙")).toBeInTheDocument();
   });
 
   it("renders replaceable thumbnail images for featured content and apps", () => {

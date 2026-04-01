@@ -21,7 +21,7 @@ describe("content data selectors", () => {
   });
 
   it("returns category details by slug", () => {
-    expect(getCategoryBySlug("behavior")?.name).toBe("행동 관리");
+    expect(getCategoryBySlug("behavior")?.name).toBe("마음 알아주기 (떼쓰는 이유를 이해하고 바른 행동 돕기)");
   });
 
   it("filters content by category", () => {

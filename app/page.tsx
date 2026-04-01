@@ -22,12 +22,10 @@ export default function HomePage() {
             <div className="hero-panel hero-grid border-t border-[rgba(17,17,17,0.16)]">
               <span className="eyebrow">Parent-first ABA Guide</span>
               <h1 className="page-title">
-                필요한 정보만 빠르게 읽고,
-                <br />
-                아이와 바로 실천하세요
+                오늘 배운 ABA, 지금 바로 우리 아이와 시작해볼까요?
               </h1>
               <p className="hero-summary">
-                ABA 핵심 개념, 생활 적용 예시, 교육 앱을 한 곳에서 바로 찾을 수 있습니다.
+                복잡한 이론은 덜어내고, 아이의 일상에 꼭 맞는 실전 팁과 맞춤형 교육 앱만 모았어요.
               </p>
 
               <div className="intro-actions pt-4">
@@ -41,9 +39,9 @@ export default function HomePage() {
 
               <div className="hero-facts pt-4">
                 {[
-                  ["빠른 판단", "연령, 읽는 시간, 핵심 내용을 한눈에 확인합니다."],
-                  ["실행 중심", "오늘 해볼 한 가지와 다음 행동을 함께 제안합니다."],
-                  ["앱으로 이어가기", "읽은 내용과 연결된 교육 앱을 바로 찾아 시작합니다."]
+                  ["한눈에 쏙", "아이 연령과 상황에 맞는 핵심만 5분 안에 파악해요."],
+                  ["오늘 당장 시도", "거창한 목표 대신, 오늘 아이와 해볼 수 있는 작은 행동 하나를 제안해요."],
+                  ["놀이로 자연스럽게", "배운 내용을 아이가 좋아하는 앱과 연결해 즐겁게 복습해요."]
                 ].map(([title, description]) => (
                   <div key={title} className="hero-fact">
                     <strong>{title}</strong>
@@ -55,9 +53,9 @@ export default function HomePage() {
 
             <aside className="hero-panel border-t border-[rgba(17,17,17,0.16)]">
               <span className="eyebrow">Today&apos;s Start</span>
-              <h2 className="section-title mt-4">오늘 어디서 시작할까요?</h2>
+              <h2 className="section-title mt-4">지금 우리 아이에게 가장 필요한 건 무엇인가요?</h2>
               <p className="quiet mt-3 text-sm">
-                우리 아이에게 맞는 것, 시작 방법, 다음 단계를 한 번에 확인하세요.
+                막막할 땐 여기서 시작해 보세요. 아이의 속도에 맞춘 다음 단계를 안내해 드립니다.
               </p>
 
               <div className="hero-checklist mt-6">
@@ -141,22 +139,21 @@ export default function HomePage() {
 
             <div className="support-grid md:grid-cols-2">
               <article className="info-panel">
-                <span className="eyebrow">Quick Win</span>
-                <h3 className="mt-3 visual-title">짧게 읽고 바로 실천하기</h3>
+                <span className="eyebrow">작은 성공부터 시작해요</span>
+                <h3 className="mt-3 visual-title">부담 없이 읽고, 오늘 당장 해볼 수 있는 딱 한 가지만 제안할게요.</h3>
                 <p className="quiet mt-2 text-sm">
-                  핵심 문장과 바로 해볼 행동만 담았습니다.
                 </p>
               </article>
               <article className="info-panel">
-                <span className="eyebrow">Trust &amp; Rhythm</span>
-                <h3 className="mt-3 visual-title">읽기 쉬운 정보 순서</h3>
+                <span className="eyebrow">바쁜 부모를 위한 맞춤 요약</span>
+                <h3 className="mt-3 visual-title">핵심만 먼저, 다음 행동은 명확하게.</h3>
                 <p className="quiet mt-2 text-sm">
-                  제목, 요약, 다음 행동 순서로 바로 읽힙니다.
+                  읽는 시간을 아껴드려요.
                 </p>
               </article>
               <article className="info-panel md:col-span-2">
-                <span className="eyebrow">5-minute Routine</span>
-                <h3 className="mt-3 visual-title">오늘의 5분 루틴으로 연결합니다</h3>
+                <span className="eyebrow">기적을 만드는 하루 5분</span>
+                <h3 className="mt-3 visual-title">글을 읽고 난 뒤, 아이와 자연스럽게 이어갈 5분 놀이를 알려드려요.</h3>
                 <p className="quiet mt-2 text-sm">
                   콘텐츠를 읽고 나면 다음에 할 일이 자연스럽게 이어집니다.
                 </p>
@@ -170,7 +167,7 @@ export default function HomePage() {
         <div className="page-shell">
           <SectionHeading
             eyebrow="Education Apps"
-            title="읽고 나서 아이와 바로 연습하세요"
+            title="배운 내용, 교육 앱으로 즐겁게 이어가요"
             description="읽은 내용과 연결된 교육 앱을 바로 찾아보세요."
           />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -180,9 +177,9 @@ export default function HomePage() {
                 app={app}
                 ctaLabel={
                   app.slug === "sia-hangul-keyboard"
-                    ? "앱 상세 보기"
+                    ? "우리 아이와 해보기"
                     : app.launchMode === "detail"
-                      ? "앱 살펴보기"
+                      ? "어떤 놀이인지 보기"
                       : undefined
                 }
               />
