@@ -44,7 +44,7 @@ export default function AppsPage() {
           <SectionHeading
             eyebrow="Coming Soon"
             title="곧 만날 수 있는 앱"
-            description="준비 중인 앱도 미리 살펴보고 학습 계획을 세워보세요."
+            description="곧 출시될 앱을 미리 확인하세요."
           />
           <div className="grid gap-5 md:grid-cols-2">
             {upcomingApps.map((app) => (

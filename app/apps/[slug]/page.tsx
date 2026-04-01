@@ -74,7 +74,7 @@ export default function AppDetailPage({ params }: Props) {
           <SectionHeading
             eyebrow="Use Flow"
             title="부모가 바로 이해할 수 있게 설계했습니다"
-            description="앱 설명, 사용 연령, 실행 CTA가 한 번에 읽히도록 정리했습니다."
+            description="앱을 시작하기 전 아이에게 맞는지 빠르게 확인하세요."
           />
           <div className="grid gap-4 md:grid-cols-3">
             <div className="info-panel">

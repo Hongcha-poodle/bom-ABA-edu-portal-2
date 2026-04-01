@@ -81,9 +81,6 @@ export default function ContentDetailPage({ params }: Props) {
 
               <section className="info-panel">
                 <h2 className="text-[1.1rem] font-semibold">같은 주제 더 보기</h2>
-                <p className="quiet mt-2 text-sm">
-                  지금 읽은 주제와 연결되는 다른 콘텐츠를 이어서 볼 수 있습니다.
-                </p>
               </section>
             </aside>
           </div>
