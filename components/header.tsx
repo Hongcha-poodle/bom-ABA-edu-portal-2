@@ -35,13 +35,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-[rgba(17,17,17,0.08)] bg-[color:rgba(255,255,255,0.9)] backdrop-blur">
       <div className="page-shell header-shell">
-        <Link href="/" className="inline-flex min-h-11 items-center gap-3" aria-label="ABA 에듀 포털 홈">
-          <span className="grid h-11 w-11 place-items-center bg-[rgba(17,17,17,0.05)] text-sm font-semibold text-[var(--accent-primary)]">
+        <Link href="/" className="header-brand" aria-label="ABA 에듀 포털 홈">
+          <span className="header-brand__mark">
             ABA
           </span>
-          <span className="flex flex-col gap-0.5">
-            <strong className="text-[15px] leading-none">ABA 에듀 포털</strong>
-            <span className="text-[13px] leading-5 text-[var(--text-secondary)]">
+          <span className="header-brand__copy">
+            <strong>ABA 에듀 포털</strong>
+            <span>
               부모를 위한 ABA 실천 가이드
             </span>
           </span>

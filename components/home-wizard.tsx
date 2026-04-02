@@ -25,31 +25,33 @@ export function HomeWizard() {
     <section className="section-block section-block--gray page-section">
       <div className="page-shell">
         <div className="wizard-shell">
-          <div className="wizard-header">
-            <span className="eyebrow">Quick Curation</span>
-            <h2 className="section-title">지금 우리 아이에게 가장 필요한 것은?</h2>
-            <p className="section-description">
-              지금 눈앞의 고민을 눌러보세요. 바로 읽기 좋은 가이드를 먼저 골라드릴게요.
-            </p>
-          </div>
+          <div className="wizard-layout">
+            <div className="wizard-header">
+              <span className="eyebrow">맞춤 추천</span>
+              <h2 className="section-title">지금 우리 아이에게 가장 필요한 것은?</h2>
+              <p className="section-description">
+                지금 눈앞의 고민을 눌러보세요. 바로 읽기 좋은 가이드를 먼저 골라드릴게요.
+              </p>
+            </div>
 
-          <div className="wizard-chip-row" role="tablist" aria-label="빠른 고민 선택">
-            {wizardChips.map((chip) => {
-              const isActive = chip.id === selectedChipId;
+            <div className="wizard-chip-row" role="tablist" aria-label="빠른 고민 선택">
+              {wizardChips.map((chip) => {
+                const isActive = chip.id === selectedChipId;
 
-              return (
-                <button
-                  key={chip.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  className={`wizard-chip ${isActive ? "wizard-chip--active" : ""}`}
-                  onClick={() => setSelectedChipId(chip.id)}
-                >
-                  {chip.label}
-                </button>
-              );
-            })}
+                return (
+                  <button
+                    key={chip.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    className={`wizard-chip ${isActive ? "wizard-chip--active" : ""}`}
+                    onClick={() => setSelectedChipId(chip.id)}
+                  >
+                    {chip.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div className="wizard-summary">

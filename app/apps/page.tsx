@@ -14,8 +14,8 @@ export default function AppsPage() {
     <div>
       <section className="section-block section-block--white page-section--tight">
         <div className="page-shell">
-          <div className="hero-panel hero-grid border-t border-[rgba(17,17,17,0.16)]">
-            <span className="eyebrow">Apps List</span>
+          <div className="hero-panel hero-panel--narrow hero-grid">
+            <span className="eyebrow">앱 목록</span>
             <h1 className="page-title">읽은 내용을 아이와 직접 연습하는 교육 앱</h1>
             <p className="page-description">
               지금 바로 사용할 수 있는 앱과 곧 출시될 앱을 함께 소개합니다.
@@ -26,30 +26,34 @@ export default function AppsPage() {
 
       <section className="section-block section-block--blue page-section">
         <div className="page-shell">
-          <SectionHeading
-            eyebrow="Live Apps"
-            title="지금 사용 가능한 앱"
-            description="아이와 함께 지금 바로 시작할 수 있습니다."
-          />
-          <div className="grid gap-5 md:grid-cols-2">
-            {liveApps.map((app) => (
-              <AppCard key={app.slug} app={app} emphasize />
-            ))}
+          <div className="section-band">
+            <SectionHeading
+              eyebrow="지금 사용 가능"
+              title="지금 사용 가능한 앱"
+              description="아이와 함께 지금 바로 시작할 수 있습니다."
+            />
+            <div className="grid gap-5 md:grid-cols-2">
+              {liveApps.map((app) => (
+                <AppCard key={app.slug} app={app} emphasize />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section-block section-block--gray page-section">
         <div className="page-shell">
-          <SectionHeading
-            eyebrow="Coming Soon"
-            title="곧 만날 수 있는 앱"
-            description="곧 출시될 앱을 미리 확인하세요."
-          />
-          <div className="grid gap-5 md:grid-cols-2">
-            {upcomingApps.map((app) => (
-              <AppCard key={app.slug} app={app} />
-            ))}
+          <div className="section-band">
+            <SectionHeading
+              eyebrow="출시 예정"
+              title="곧 만날 수 있는 앱"
+              description="곧 출시될 앱을 미리 확인하세요."
+            />
+            <div className="grid gap-5 md:grid-cols-2">
+              {upcomingApps.map((app) => (
+                <AppCard key={app.slug} app={app} />
+              ))}
+            </div>
           </div>
         </div>
       </section>

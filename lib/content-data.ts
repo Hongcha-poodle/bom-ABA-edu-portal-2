@@ -136,7 +136,7 @@ export const contentItems: ContentItem[] = [
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/requesting-choice-board.svg",
       alt: "선택 보드와 요청 훈련 루틴을 표현한 더미 썸네일",
-      eyebrow: "Card Story",
+      eyebrow: "카드 스토리",
       title: "요청 훈련",
       description: "선택판, 즉시 강화, 짧은 모델링",
       badge: "언어 시작",
@@ -182,7 +182,7 @@ export const contentItems: ContentItem[] = [
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/turn-taking-play.svg",
       alt: "차례 지키기 놀이를 표현한 더미 썸네일",
-      eyebrow: "Video Guide",
+      eyebrow: "영상 가이드",
       title: "차례 놀이",
       description: "기다리기, 번갈아 하기, 짧은 칭찬",
       badge: "사회성",
@@ -217,7 +217,7 @@ export const contentItems: ContentItem[] = [
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/toothbrushing-routine.svg",
       alt: "양치 루틴 단계를 보여주는 더미 썸네일",
-      eyebrow: "Article",
+      eyebrow: "아티클",
       title: "양치 루틴",
       description: "단계 쪼개기, 시각 단서, 성공 경험",
       badge: "일상생활",
@@ -262,7 +262,7 @@ export const contentItems: ContentItem[] = [
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/replacement-behavior.svg",
       alt: "대체 행동 설계 흐름을 표현한 더미 썸네일",
-      eyebrow: "Infographic",
+      eyebrow: "인포그래픽",
       title: "대체 행동",
       description: "기능 관찰, 반응 설계, 일관된 강화",
       badge: "행동 관리",
@@ -307,7 +307,7 @@ export const contentItems: ContentItem[] = [
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/echoic-play.svg",
       alt: "따라 말하기 놀이를 표현한 더미 썸네일",
-      eyebrow: "Play Loop",
+      eyebrow: "놀이 루프",
       title: "소리 모방",
       description: "한 음절, 즉시 강화, 놀이 속 반복",
       badge: "언어 확장",
@@ -342,7 +342,7 @@ export const contentItems: ContentItem[] = [
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/requesting-choice-board.svg",
       alt: "ABA 기초 개념을 설명하는 더미 썸네일",
-      eyebrow: "Basics",
+      eyebrow: "기초 개념",
       title: "ABA 입문",
       description: "행동 관찰, 원인 분석, 체계적 교수",
       badge: "입문",
@@ -385,7 +385,7 @@ export const contentItems: ContentItem[] = [
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/turn-taking-play.svg",
       alt: "강화의 기본 원리를 설명하는 더미 썸네일",
-      eyebrow: "Card Story",
+      eyebrow: "카드 스토리",
       title: "강화 기초",
       description: "즉시 강화, 구체적 칭찬, 일관성",
       badge: "핵심 개념",
@@ -437,7 +437,7 @@ export const contentItems: ContentItem[] = [
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/replacement-behavior.svg",
       alt: "프롬프트 기술을 설명하는 더미 썸네일",
-      eyebrow: "Guide",
+      eyebrow: "가이드",
       title: "프롬프트",
       description: "힌트 단계, 점진적 축소, 자립 유도",
       badge: "핵심 기술",
@@ -486,7 +486,7 @@ export const appItems: AppItem[] = [
     thumbnailAsset: {
       thumbnailSrc: "/content-thumbnails/app-hangul-keyboard.svg",
       alt: "한글 키보드 학습 앱 더미 썸네일",
-      eyebrow: "Live App",
+      eyebrow: "바로 사용 가능",
       title: "한글 입력",
       description: "큰 키보드, 요청 문장, 즉시 음성 피드백",
       badge: "실행 가능",
@@ -515,7 +515,7 @@ export const appItems: AppItem[] = [
     thumbnailAsset: {
       thumbnailSrc: "/content-thumbnails/app-food-sort.svg",
       alt: "음식 분류 게임 앱 더미 썸네일",
-      eyebrow: "Live App",
+      eyebrow: "바로 사용 가능",
       title: "음식 분류",
       description: "드래그 앤 드롭, 범주화, 짧은 세션",
       badge: "추천 앱",
@@ -544,7 +544,7 @@ export const appItems: AppItem[] = [
     thumbnailAsset: {
       thumbnailSrc: "/content-thumbnails/app-emotion-matching.svg",
       alt: "감정 매칭 앱 더미 썸네일",
-      eyebrow: "Coming Soon",
+      eyebrow: "출시 예정",
       title: "감정 매칭",
       description: "표정 카드, 상황 연결, 보호자 코칭",
       badge: "준비 중",
@@ -573,7 +573,7 @@ export const appItems: AppItem[] = [
     thumbnailAsset: {
       thumbnailSrc: "/content-thumbnails/app-routine-builder.svg",
       alt: "루틴 빌더 앱 더미 썸네일",
-      eyebrow: "Coming Soon",
+      eyebrow: "출시 예정",
       title: "루틴 설계",
       description: "시각 스케줄, 완료 체크, 생활 루틴",
       badge: "준비 중",

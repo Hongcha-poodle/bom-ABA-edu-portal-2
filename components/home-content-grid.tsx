@@ -10,9 +10,9 @@ type HomeContentGridProps = {
 
 export function HomeContentGrid({ title, description, items }: HomeContentGridProps) {
   return (
-    <div className="mt-8">
+    <div className="section-band mt-8">
       <SectionHeading
-        eyebrow="Featured Content"
+        eyebrow="추천 콘텐츠"
         title={title}
         description={description}
       />

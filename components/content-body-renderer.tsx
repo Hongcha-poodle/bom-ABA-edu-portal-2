@@ -32,7 +32,7 @@ export function ContentBodyRenderer({ item }: Props) {
           </section>
         ))}
         <section className="info-panel">
-          <h3 className="mb-3 text-lg font-semibold">실천 팁</h3>
+          <h3 className="mb-3 text-lg font-medium">실천 팁</h3>
           <ul className="grid gap-2 pl-5 text-[var(--text-secondary)]">
             {item.body.tips.map((tip) => (
               <li key={tip}>{tip}</li>
@@ -46,12 +46,12 @@ export function ContentBodyRenderer({ item }: Props) {
   return (
     <div className="editorial-grid narrow-reading-width" data-testid="video-body">
       <section className="surface-card p-6">
-        <span className="eyebrow">Video Guide</span>
+        <span className="eyebrow">영상 가이드</span>
         <h2 className="section-title mt-3 text-[1.75rem]">{item.body.videoTitle}</h2>
         <p className="quiet mt-3">{item.body.summary}</p>
       </section>
       <section className="info-panel">
-        <h3 className="mb-3 text-lg font-semibold">보고 나서 바로 해볼 것</h3>
+        <h3 className="mb-3 text-lg font-medium">보고 나서 바로 해볼 것</h3>
         <ul className="grid gap-2 pl-5 text-[var(--text-secondary)]">
           {item.body.bulletPoints.map((point) => (
             <li key={point}>{point}</li>

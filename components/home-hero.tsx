@@ -5,14 +5,19 @@ export function HomeHero() {
     <section className="section-block section-block--white page-section--tight">
       <div className="page-shell">
         <div className="hero-shell">
-          <div className="hero-panel hero-grid border-t border-[rgba(17,17,17,0.16)]">
-            <span className="eyebrow">Parent-first ABA Guide</span>
+          <div className="hero-panel hero-panel--primary hero-grid">
+            <span className="eyebrow">부모 중심 ABA 가이드</span>
             <h1 className="page-title">
               오늘 배운 ABA, 지금 바로 우리 아이와 시작해볼까요?
             </h1>
             <p className="hero-summary">
               복잡한 이론은 덜어내고, 아이의 일상에 꼭 맞는 실전 팁과 맞춤형 교육 앱만 모았어요.
             </p>
+
+            <div className="hero-highlight">
+              <strong>오늘 바로 시작할 수 있게</strong>
+              <p>읽기, 따라 하기, 앱으로 연결하기까지 한 흐름으로 이어드립니다.</p>
+            </div>
 
             <div className="intro-actions intro-actions--hero pt-4">
               <Link href="/apps" className="button-primary">
@@ -37,8 +42,8 @@ export function HomeHero() {
             </div>
           </div>
 
-          <aside className="hero-panel border-t border-[rgba(17,17,17,0.16)]">
-            <span className="eyebrow">Today&apos;s Start</span>
+          <aside className="hero-panel hero-panel--secondary">
+            <span className="eyebrow">오늘의 시작</span>
             <h2 className="section-title mt-4">막막할 땐, 지금 필요한 고민부터 고르세요</h2>
             <p className="quiet mt-3 text-sm">
               막막한 하루에도 시작은 간단하게. 아이의 속도에 맞춘 다음 단계를 바로 안내해 드립니다.

@@ -33,7 +33,7 @@ export default function ContentDetailPage({ params }: Props) {
     <div>
       <section className="section-block section-block--white page-section--tight">
         <div className="page-shell">
-          <div className="hero-panel hero-grid border-t border-[rgba(17,17,17,0.16)]">
+          <div className="hero-panel hero-panel--narrow hero-grid">
             <span className="eyebrow">{category?.name ?? "콘텐츠"}</span>
             <h1 className="page-title">{item.title}</h1>
             <p className="page-description">{item.summary}</p>
@@ -57,7 +57,7 @@ export default function ContentDetailPage({ params }: Props) {
 
       <section className="section-block section-block--gray page-section">
         <div className="page-shell">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_320px]">
+          <div className="detail-grid">
             <div className="space-y-6">
               <article className="content-card">
                 <ContentThumbnail asset={item.coverAsset} className="aspect-[1.9/1] w-full" />
@@ -69,18 +69,35 @@ export default function ContentDetailPage({ params }: Props) {
 
             <aside className="space-y-4">
               <section className="info-panel">
-                <span className="eyebrow">Content Meta</span>
-                <h2 className="mt-3 text-[1.1rem] font-semibold">한눈에 보기</h2>
-                <div className="mt-4 grid gap-3 text-sm text-[var(--text-secondary)]">
-                  <div>카테고리: {category?.name}</div>
-                  <div>형식: {getContentTypeLabel(item.contentType)}</div>
-                  <div>난이도: {getContentLevelLabel(item.level)}</div>
-                  <div>권장 연령: {item.ageRange}</div>
+                <span className="eyebrow">콘텐츠 정보</span>
+                <h2 className="mt-3 text-[1.1rem] font-medium">한눈에 보기</h2>
+                <div className="info-list mt-4">
+                  <div className="info-list__item">
+                    <span className="info-list__label">카테고리</span>
+                    <span className="info-list__value">{category?.name}</span>
+                  </div>
+                  <div className="info-list__item">
+                    <span className="info-list__label">형식</span>
+                    <span className="info-list__value">{getContentTypeLabel(item.contentType)}</span>
+                  </div>
+                  <div className="info-list__item">
+                    <span className="info-list__label">난이도</span>
+                    <span className="info-list__value">{getContentLevelLabel(item.level)}</span>
+                  </div>
+                  <div className="info-list__item">
+                    <span className="info-list__label">권장 연령</span>
+                    <span className="info-list__value">{item.ageRange}</span>
+                  </div>
                 </div>
               </section>
 
-              <section className="info-panel">
-                <h2 className="text-[1.1rem] font-semibold">같은 주제 더 보기</h2>
+              <section className="info-panel section-stack">
+                <span className="eyebrow">다음 동선</span>
+                <h2 className="text-[1.1rem] font-medium">같은 주제 더 보기</h2>
+                <p className="quiet text-sm">같은 카테고리의 다른 형식 콘텐츠로 바로 이어서 볼 수 있어요.</p>
+                <Link href={`/categories/${item.category}`} className="button-secondary">
+                  {category?.name} 전체 보기
+                </Link>
               </section>
             </aside>
           </div>
@@ -89,11 +106,13 @@ export default function ContentDetailPage({ params }: Props) {
 
       <section className="section-block section-block--blue page-section">
         <div className="page-shell">
-          <SectionHeading eyebrow="Related Content" title="다음으로 읽기 좋은 콘텐츠" />
-          <div className="grid gap-5 md:grid-cols-2">
-            {relatedItems.map((related) => (
-              <ContentCard key={related.slug} item={related} variant="compact" />
-            ))}
+          <div className="section-band">
+            <SectionHeading eyebrow="관련 콘텐츠" title="다음으로 읽기 좋은 콘텐츠" />
+            <div className="grid gap-5 md:grid-cols-2">
+              {relatedItems.map((related) => (
+                <ContentCard key={related.slug} item={related} variant="compact" />
+              ))}
+            </div>
           </div>
         </div>
       </section>
