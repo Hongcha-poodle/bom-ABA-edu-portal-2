@@ -19,6 +19,7 @@ export function ContentCard({
 }: ContentCardProps) {
   const category = getCategoryBySlug(item.category);
   const isCompact = variant === "compact";
+  const categoryToneClass = category ? `chip--${category.slug}` : "";
 
   return (
     <article className={`content-card ${isCompact ? "content-card--compact" : ""}`}>
@@ -29,7 +30,7 @@ export function ContentCard({
 
       <div className="card-frame">
         <div className="card-chip-row">
-          {showCategory && category ? <span className="chip">{category.name}</span> : null}
+          {showCategory && category ? <span className={`chip ${categoryToneClass}`}>{category.name}</span> : null}
           <span className="chip">{item.ageRange}</span>
         </div>
 
@@ -39,7 +40,7 @@ export function ContentCard({
         </div>
       </div>
 
-      <Link href={`/content/${item.slug}`} className="button-ghost mt-auto">
+      <Link href={`/content/${item.slug}`} className="button-ghost button-ghost--cta mt-auto">
         5분 가이드 읽기
       </Link>
     </article>
