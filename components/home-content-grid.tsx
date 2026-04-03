@@ -10,21 +10,25 @@ type HomeContentGridProps = {
 
 export function HomeContentGrid({ title, description, items }: HomeContentGridProps) {
   return (
-    <div className="section-band mt-8">
-      <SectionHeading
-        eyebrow="추천 콘텐츠"
-        title={title}
-        description={description}
-      />
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {items.map((item, index) => (
-          <ContentCard
-            key={item.slug}
-            item={item}
-            variant={index === 0 ? "default" : "compact"}
+    <section className="section-block section-block--gray page-section">
+      <div className="page-shell">
+        <div className="section-band">
+          <SectionHeading
+            eyebrow="추천 콘텐츠"
+            title={title}
+            description={description}
           />
-        ))}
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {items.map((item) => (
+              <ContentCard
+                key={item.slug}
+                item={item}
+                variant="home"
+              />
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

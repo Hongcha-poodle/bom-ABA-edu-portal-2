@@ -3,6 +3,7 @@ export type ContentType = "image-sequence" | "rich-text" | "video";
 export type Category = {
   slug: string;
   name: string;
+  shortName: string;
   description: string;
   emoji: string;
   softColor: string;
@@ -61,6 +62,7 @@ export type ContentItem = {
   category: string;
   contentType: ContentType;
   summary: string;
+  homeSummary: string;
   coverImage: string;
   coverAsset: VisualAsset;
   publishedAt: string;
@@ -77,6 +79,7 @@ export type AppItem = {
   name: string;
   status: "live" | "coming-soon";
   shortDescription: string;
+  homeSummary: string;
   features: string[];
   thumbnail: string;
   thumbnailAsset: VisualAsset;
@@ -89,6 +92,7 @@ export const categories: Category[] = [
   {
     slug: "language",
     name: "말문 트기 (요청하고 따라 말하는 법)",
+    shortName: "말문 트기",
     description: "말문 열기, 요청하기, 따라 말하기처럼 언어 발달을 돕는 콘텐츠",
     emoji: "🗣️",
     softColor: "#fae8ff"
@@ -96,6 +100,7 @@ export const categories: Category[] = [
   {
     slug: "social",
     name: "어울려 놀기 (눈 맞추고 차례 기다리기)",
+    shortName: "사회성",
     description: "차례 지키기, 눈맞춤, 함께 놀이하기 같은 사회성 훈련 가이드",
     emoji: "🤝",
     softColor: "#ccfbea"
@@ -103,6 +108,7 @@ export const categories: Category[] = [
   {
     slug: "daily-living",
     name: "혼자서 해보기 (밥 먹고 옷 입는 루틴 만들기)",
+    shortName: "생활 루틴",
     description: "식사, 옷 입기, 정리정돈 등 루틴을 만드는 생활 기술 콘텐츠",
     emoji: "🧺",
     softColor: "#fef9c3"
@@ -110,6 +116,7 @@ export const categories: Category[] = [
   {
     slug: "behavior",
     name: "마음 알아주기 (떼쓰는 이유를 이해하고 바른 행동 돕기)",
+    shortName: "행동 이해",
     description: "문제 행동을 관찰하고 대체 행동을 가르치는 실천 중심 팁",
     emoji: "🪄",
     softColor: "#e0f2fe"
@@ -117,6 +124,7 @@ export const categories: Category[] = [
   {
     slug: "aba-basics",
     name: "처음 만나는 ABA (가장 쉬운 ABA 입문)",
+    shortName: "ABA 기초",
     description: "강화, 프롬프트, 소거 등 ABA 핵심 개념을 쉽게 풀어주는 입문 가이드",
     emoji: "📘",
     softColor: "#f0e6ff"
@@ -132,6 +140,7 @@ export const contentItems: ContentItem[] = [
     level: "beginner",
     ageRange: "2-5세",
     summary: "말 대신 그림으로 \"이거 줘\" 표현하기: 아직 말이 트이지 않은 아이도, 그림을 짚으며 답답함 없이 원하는 걸 표현하는 4단계 방법이에요.",
+    homeSummary: "그림을 짚으며 원하는 것을 표현하는 첫 요청 연습",
     coverImage: "카드뉴스: 그림 선택판, 간식 요청, 칭찬 루틴",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/requesting-choice-board.svg",
@@ -178,6 +187,7 @@ export const contentItems: ContentItem[] = [
     level: "beginner",
     ageRange: "3-6세",
     summary: "공놀이와 블록 놀이를 활용해 차례 지키기와 기다리기를 짧게 훈련하는 영상형 가이드입니다.",
+    homeSummary: "놀이 상황에서 3초 기다리기부터 시작하는 간단한 루틴",
     coverImage: "영상 가이드: 차례 지키기, 기다리기, 간단한 칭찬 문장",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/turn-taking-play.svg",
@@ -213,6 +223,7 @@ export const contentItems: ContentItem[] = [
     level: "beginner",
     ageRange: "3-7세",
     summary: "양치를 싫어하는 아이를 위해 과제를 작은 단계로 쪼개고 시각 단서를 붙이는 방법을 소개합니다.",
+    homeSummary: "양치를 작은 단계로 나눠 매일 이어가는 생활 루틴 가이드",
     coverImage: "아티클: 시각 스케줄, 단계 쪼개기, 성공 경험 쌓기",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/toothbrushing-routine.svg",
@@ -258,6 +269,7 @@ export const contentItems: ContentItem[] = [
     level: "intermediate",
     ageRange: "2-10세",
     summary: "울음, 떼쓰기, 던지기 행동을 막는 대신 무엇을 하게 할지 정하는 대체 행동 설계 가이드입니다.",
+    homeSummary: "행동의 이유를 살피고 대신 할 행동을 정하는 첫 가이드",
     coverImage: "인포그래픽: 문제 행동 관찰, 기능 추정, 대체 행동 설계",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/replacement-behavior.svg",
@@ -303,6 +315,7 @@ export const contentItems: ContentItem[] = [
     level: "intermediate",
     ageRange: "2-5세",
     summary: "에코익 연습을 놀이 중간에 짧게 넣어 자연스럽게 말 모방 빈도를 늘리는 방법입니다.",
+    homeSummary: "놀이 흐름 안에서 짧게 따라 말하기를 넣는 언어 루틴",
     coverImage: "영상: 소리 모방, 즉시 강화, 짧은 반복",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/echoic-play.svg",
@@ -338,6 +351,7 @@ export const contentItems: ContentItem[] = [
     level: "beginner",
     ageRange: "전 연령",
     summary: "ABA(응용행동분석)가 무엇이고, 왜 발달지연 아동에게 효과적인지 짧게 설명합니다.",
+    homeSummary: "강화와 실천 원리를 부모 눈높이에서 짧게 이해하는 입문 설명",
     coverImage: "아티클: ABA 정의, 핵심 원리, 가정에서의 적용",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/requesting-choice-board.svg",
@@ -381,6 +395,7 @@ export const contentItems: ContentItem[] = [
     level: "beginner",
     ageRange: "전 연령",
     summary: "ABA의 가장 중요한 도구인 '강화'가 무엇이고, 일상에서 어떻게 사용하는지 4단계로 알아봅니다.",
+    homeSummary: "칭찬과 보상을 언제 어떻게 써야 하는지 바로 이해하는 기본 가이드",
     coverImage: "카드뉴스: 강화 정의, 즉시 강화, 일관성 유지",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/turn-taking-play.svg",
@@ -433,6 +448,7 @@ export const contentItems: ContentItem[] = [
     level: "beginner",
     ageRange: "전 연령",
     summary: "아이가 새로운 행동을 배울 때 적절한 힌트(프롬프트)를 주고 점차 줄여가는 방법을 안내합니다.",
+    homeSummary: "도움을 주고 천천히 줄여가는 프롬프트의 기본을 정리한 글",
     coverImage: "아티클: 프롬프트 종류, 단계적 축소, 자립 유도",
     coverAsset: {
       thumbnailSrc: "/content-thumbnails/replacement-behavior.svg",
@@ -477,6 +493,7 @@ export const appItems: AppItem[] = [
     status: "live",
     shortDescription:
       "글자를 몰라도 톡톡, 소리로 친해지는 첫 한글: 큰 버튼과 소리로, 아이가 스스로 문장을 만들어보며 한글에 흥미를 가져요.",
+    homeSummary: "큰 버튼과 소리로 한글에 친해지는 첫 연습",
     features: [
       "큰 터치 타깃과 명확한 음성 피드백",
       "자주 쓰는 요청 문장을 빠르게 구성",
@@ -506,6 +523,7 @@ export const appItems: AppItem[] = [
     status: "live",
     shortDescription:
       "\"사과는 과일, 당근은 채소!\" 놀면서 배우는 단어 분류: 음식 그림을 옮기다 보면, 자연스럽게 단어의 뜻과 종류를 깨치게 돼요.",
+    homeSummary: "놀면서 음식 단어와 분류를 익히는 짧은 활동",
     features: [
       "음식 카테고리별 드래그 앤 드롭 활동",
       "정답 시 시각·청각 강화 제공",
@@ -535,6 +553,7 @@ export const appItems: AppItem[] = [
     status: "coming-soon",
     shortDescription:
       "표정과 상황을 연결해 감정 이해를 확장하는 사회성 학습 앱입니다.",
+    homeSummary: "표정과 상황을 연결해 감정 이해를 넓히는 앱",
     features: [
       "표정-상황 매칭 카드",
       "보호자 코칭 스크립트 제공",
@@ -564,6 +583,7 @@ export const appItems: AppItem[] = [
     status: "coming-soon",
     shortDescription:
       "아침 준비와 취침 루틴을 시각 스케줄로 만드는 생활기술 지원 앱입니다.",
+    homeSummary: "시각 스케줄로 아침과 저녁 루틴을 돕는 앱",
     features: [
       "루틴 카드 커스터마이징",
       "완료 체크 보상 시스템",
