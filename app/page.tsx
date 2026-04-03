@@ -1,47 +1,107 @@
 import Link from "next/link";
 
 import { AppCard } from "@/components/app-card";
+import { HomeContentGrid } from "@/components/home-content-grid";
 import { HomeHero } from "@/components/home-hero";
-import { HomeWizard } from "@/components/home-wizard";
 import { SectionHeading } from "@/components/section-heading";
-import { appItems, categories } from "@/lib/content-data";
+import { appItems, categories, contentItems } from "@/lib/content-data";
 
 const featuredApps = appItems.slice(0, 3);
+const featuredContent = contentItems.slice(0, 3);
 const categoryToneClass = [
   "category-shortcut--primary",
   "category-shortcut--secondary",
   "category-shortcut--warm"
 ];
+const homeCategoryCards = [
+  {
+    slug: "language",
+    title: "말문 트기",
+    description: "요청하기, 따라 말하기, 첫 언어 표현"
+  },
+  {
+    slug: "social",
+    title: "사회성",
+    description: "차례 지키기, 기다리기, 함께 놀이"
+  },
+  {
+    slug: "daily-living",
+    title: "생활 루틴",
+    description: "식사, 옷 입기, 정리, 양치"
+  },
+  {
+    slug: "behavior",
+    title: "행동 이해",
+    description: "행동의 이유 관찰, 대체행동 지도"
+  },
+  {
+    slug: "aba-basics",
+    title: "ABA 기초",
+    description: "강화, 프롬프트, 실천 원리"
+  }
+] as const;
 
 export default function HomePage() {
   return (
     <div>
       <HomeHero />
-      <HomeWizard />
 
       <section className="section-block section-block--yellow page-section">
         <div className="page-shell">
           <div className="section-band">
             <SectionHeading
-              eyebrow="주제 바로가기"
-              title="어떤 주제부터 시작할까요?"
-              description="지금 가장 필요한 주제를 골라보세요."
+              eyebrow="주제 선택"
+              title="지금 필요한 주제를 선택해"
+              description="바로 시작할 주제를 하나 고르면 다음 콘텐츠로 자연스럽게 이어집니다."
             />
 
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {categories.map((category, index) => (
-                <Link
-                  key={category.slug}
-                  href={`/categories/${category.slug}`}
-                  className={`category-shortcut ${categoryToneClass[index % categoryToneClass.length]}`}
-                >
-                  <span className="category-shortcut__badge">{category.emoji}</span>
-                  <div>
-                    <h3 className="card-title">{category.name}</h3>
-                    <p className="quiet mt-1.5 text-sm">{category.description}</p>
-                    <span className="category-shortcut__meta mt-3 inline-block">바로 살펴보기</span>
-                  </div>
-                </Link>
+              {homeCategoryCards.map((card, index) => {
+                const category = categories.find((item) => item.slug === card.slug);
+
+                return (
+                  <Link
+                    key={card.slug}
+                    href={`/categories/${card.slug}`}
+                    className={`category-shortcut ${categoryToneClass[index % categoryToneClass.length]}`}
+                  >
+                    <span className="category-shortcut__badge">{category?.emoji}</span>
+                    <div>
+                      <h3 className="card-title">{card.title}</h3>
+                      <p className="quiet mt-1.5 text-sm">{card.description}</p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <HomeContentGrid
+        title="먼저 보기 좋은 추천 콘텐츠"
+        description="홈에서는 가볍게 비교하고, 자세한 내용은 상세 페이지에서 이어서 보세요."
+        items={featuredContent}
+      />
+
+      <section className="section-block section-block--blue page-section">
+        <div className="page-shell">
+          <div className="section-band">
+            <SectionHeading
+              eyebrow="교육 앱"
+              title="배운 내용, 교육 앱으로 바로 이어가요"
+              description="읽은 주제와 연결된 앱을 바로 찾아 짧게 반복 연습해보세요."
+            />
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {featuredApps.map((app) => (
+                <AppCard
+                  key={app.slug}
+                  app={app}
+                  variant="home"
+                  ctaLabel={
+                    app.launchMode === "detail" ? "앱 보기" : undefined
+                  }
+                />
               ))}
             </div>
           </div>
@@ -51,69 +111,9 @@ export default function HomePage() {
       <section className="section-block section-block--pink page-section">
         <div className="page-shell">
           <div className="section-band section-band--soft">
-            <div className="grid gap-4 lg:grid-cols-[1.05fr_1fr]">
-              <div className="support-panel">
-                <div>
-                  <span className="eyebrow">부모 가이드</span>
-                  <h2 className="section-title mt-4">부모가 먼저, 작게 시작합니다</h2>
-                  <p className="support-note mt-3">오늘 한 가지, 한 문장만 시작해도 충분합니다.</p>
-                </div>
-                <ul className="feature-list">
-                  <li>한 번에 하나의 목표만 정하고, 오늘 바로 짧게 시도합니다.</li>
-                  <li>두 가지 선택지부터 시작해 아이의 부담을 줄입니다.</li>
-                  <li>같은 주제의 앱이나 다음 읽을거리로 이어갑니다.</li>
-                </ul>
-              </div>
-
-              <div className="support-grid md:grid-cols-2">
-                <article className="info-panel">
-                  <span className="eyebrow">작은 성공부터 시작해요</span>
-                  <h3 className="mt-3 visual-title">부담 없이 읽고, 오늘 당장 해볼 수 있는 딱 한 가지만 제안할게요.</h3>
-                  <p className="quiet mt-2 text-sm">복잡한 설명보다 지금 바로 따라 할 수 있는 행동을 먼저 보여드립니다.</p>
-                </article>
-                <article className="info-panel">
-                  <span className="eyebrow">바쁜 부모를 위한 맞춤 요약</span>
-                  <h3 className="mt-3 visual-title">핵심만 먼저, 다음 행동은 명확하게.</h3>
-                  <p className="quiet mt-2 text-sm">
-                    읽는 시간을 아껴드리고, 다음 단계가 막히지 않게 이어드립니다.
-                  </p>
-                </article>
-                <article className="info-panel md:col-span-2">
-                  <span className="eyebrow">기적을 만드는 하루 5분</span>
-                  <h3 className="mt-3 visual-title">글을 읽고 난 뒤, 아이와 자연스럽게 이어갈 5분 놀이를 알려드려요.</h3>
-                  <p className="quiet mt-2 text-sm">
-                    콘텐츠를 읽고 나면 다음에 할 일이 자연스럽게 이어집니다.
-                  </p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-block section-block--blue page-section">
-        <div className="page-shell">
-          <div className="section-band">
-            <SectionHeading
-              eyebrow="교육 앱"
-              title="배운 내용, 교육 앱으로 즐겁게 이어가요"
-              description="읽은 내용과 연결된 교육 앱을 바로 찾아보세요."
-            />
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {featuredApps.map((app) => (
-                <AppCard
-                  key={app.slug}
-                  app={app}
-                  ctaLabel={
-                    app.slug === "sia-hangul-keyboard"
-                      ? "우리 아이와 해보기"
-                      : app.launchMode === "detail"
-                        ? "어떤 놀이인지 보기"
-                        : undefined
-                  }
-                />
-              ))}
-            </div>
+            <p className="support-note">
+              부모가 쉽게 이해하고 바로 시도할 수 있도록, 콘텐츠와 앱을 한 흐름으로 연결한 실천형 포털
+            </p>
           </div>
         </div>
       </section>
